@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>弹幕demo</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        /*弹幕所需的样式*/
+        .danmu{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+            z-index:9999;
+            position: relative;
+        }
+
+        .flyLeft{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            z-index: 9999;
+        }
+        .flyLeft .head{
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-right: 10px;
+            float: left;
+
+        }
+        .head img{
+            width: 50px;
+            height: 50px;
+        }
+        .flyLeft .description{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: #ffad0d;
+            float: left;
+        }
+        .d_img{
+            margin-top: 50px;
+            height: 100px;
+
+        }
+        .d_img img{
+            max-width: 200px;
+            max-height: 100px;
+            margin-left:10px;
+        }
+
+        .box{
+            width: 100%;
+            height: 100%;
+            margin:0 auto;
+            background-color: yellow;
+
+        }
+        .top{
+            width: 100%;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top" id="danmuTarget"></div>
+    </div>
+
+</body>
+</html>
+<script>
+
+    window.onload = function () {
+        var Json2 = {
+            "name":"danmuData",
+            "target":"danmuTarget",
+            "data":[{'name':'one','head':'./images/che.png','des':'描述...','img':'./images/che.png','speed':'2'}
+                ,{'name':'two','head':'./images/hua.png','des':'描述...','img':'./images/hua.png'}
+                ,{'name':'three','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png'}
+                ,{'name':'four','head':'./images/che.png','des':'描述...','img':'./images/che.png'}
+                ,{'name':'five','head':'./images/hua.png','des':'描述...','img':'./images/hua.png'}
+                ,{'name':'six','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png','speed':'2'}],
+//        "line":"1"
+        };
+
+        danmuLeft(Json2);
+
+        function danmuLeft(Json) {
+            var data = Json.data,
+                line = Json.line,
+                targetDom = document.getElementById(Json.target),
+                danmu = document.createElement("div"),
+                timer = null,
+                danmuHeight = 0,
+                danmuWidth = 0,
+                dataLen = data.length,
+                speedArr = [],
+                speed,
+                mathWidth = 0,
+                mathHeight = 0,
+                html = "",
+                num = 0,
+                domList = [],
+                domListLength = 0;
+
+            danmu.className = "danmu";
+            targetDom.appendChild(danmu);
+            danmuWidth = danmu.offsetWidth;
+            danmuHeight = danmu.offsetHeight;
+
+            for (var i = 0; i < dataLen;i++) {
+                speed = data[i].speed || 4;
+                speedArr.push(speed);
+                html += "<div class='flyLeft'><div class='head'>";
+                html += "<img src=\"" + data[i].head + "\"></div>";
+                html += "<span class='description'>" + data[i].des + "</span>";
+                html += "<div class='d_img'><img src=\"" + data[i].img + "\"></div>";
+                html += "</div>";
+            }
+
+            danmu.innerHTML += html;
+
+            domList = document.querySelectorAll(".flyLeft");
+            domListLength = domList.length;
+            //alert(domListLength);
+
+            for (var j = 0; j < domListLength; j++) {
+                mathWidth = Math.random() * danmuWidth + danmuWidth;
+                domList[j].style.left = danmuWidth + "px";
+
+                if(line==1){
+                    mathHeight = danmuHeight*0.2;
+                }else{
+                    mathHeight = Math.random() * (danmuHeight - 200);
+                }
+                domList[j].style.top = mathHeight + "px";
+
+                domList[j].style.webkitTransition = "all "+ speedArr[j] +"s linear";
+
+            }
+
+            domList[domListLength-1].addEventListener("webkitTransitionEnd",function () {
+                alert(2);
+                //targetDom.removeChild(danmu)
+            });
+
+            timer = setInterval(function () {
+                //console.log(domList.length);
+                domList[num].style.left = "-300px";
+                num++;
+                if(num==domListLength){
+                    clearInterval(timer);
+                }
+            },1500);
+        }
+
+    }
+
+
+
+
+</script>

@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>javascript弹幕</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        #play{
+            width:600px;
+            height:500px;
+            background-color:pink;
+        }
+
+        #danmu{
+            width:100%;
+            height:100%;
+            /*overflow: hidden;*/
+            z-index:9999;
+            position: relative;
+        }
+
+       .flyLeft{
+           width: 200px;
+           height: 200px;
+           position: absolute;
+           z-index: 9999;
+       }
+        .flyLeft .head{
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-right: 10px;
+            float: left;
+
+        }
+        .head img{
+            width: 50px;
+            height: 50px;
+        }
+        .flyLeft > .description{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: #ffad0d;
+            float: left;
+        }
+        .d_img{
+            margin-top: 50px;
+            height: 100px;
+            position: relative;
+        }
+        .d_img img{
+            max-width: 200px;
+            max-height: 100px;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div id="play">
+    <div id="danmu">
+        <div class="flyLeft">
+            <div class="head"><img src="images/che.png"></div>
+            <span class="description">恭喜你中奖了</span>
+            <div class="d_img"><img src="images/che.png"></div>
+        </div>
+    </div>
+</div>
+
+<input type="button" id="btn" value="弹幕"/>
+
+<script>
+
+    var text = document.getElementById("text");
+    var btn = document.getElementById("btn");
+
+
+    var dom = document.getElementById('danmu');
+
+    var arr = [{'name':'one','head':'./images/che.png','des':'描述...','img':'./images/che.png','speed':'3','top':'1'}
+               ,{'name':'two','head':'./images/hua.png','des':'描述...','img':'./images/hua.png','speed':'2','top':'1'}
+               ,{'name':'three','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png','speed':'5','top':'1'}
+               ,{'name':'four','head':'./images/che.png','des':'描述...','img':'./images/che.png','speed':'4','top':'1'}
+               ,{'name':'five','head':'./images/hua.png','des':'描述...','img':'./images/hua.png','speed':'3','top':'1'}
+               ,{'name':'six','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png','speed':'1','top':'1'}];
+    //调用
+    btn.onclick = function () {
+        danmu(dom,arr);
+    };
+
+    function danmu(domId,arr) {
+        var timer = null,
+            danmu = domId,
+            danmuHeight = danmu.offsetHeight,
+            danmuWidth = danmu.offsetWidth,
+            arrLen = arr.length,
+            target = null,
+            speedArr = [],
+            topArr = [],
+            mathWidth = 0;
+            mathHeight = 0;
+            html = "",
+            num = 0,
+            domList = [],
+            domListLength = 0;
+
+
+        for (var i = 0; i < arrLen;i++) {
+            speedArr.push(arr[i].speed);
+            topArr.push(arr[i].top);
+            html += "<div class='flyLeft'><div class='head'>";
+            html += "<img src=\"" + arr[i].head + "\"></div>";
+            html += "<span class='description'>" + arr[i].des + "</span>";
+            html += "<div class='d_img'><img src=\"" + arr[i].img + "\"></div>";
+            html += "</div>";
+            console.log(html);
+        }
+        danmu.innerHTML += html;
+
+        domList = document.getElementsByClassName("flyLeft");
+        domListLength = domList.length;
+
+        for (var j = 0; j < domList.length; j++) {
+            domList[j].index = j;
+            mathWidth = Math.round(Math.random() * danmuWidth + danmuWidth);
+            domList[j].style.left = danmuWidth + "px";
+            if(topArr[j]==1){
+                mathHeight = danmuHeight*0.2;
+            }else{
+                mathHeight = Math.round(Math.random() * (danmuHeight - 200));
+            }
+            domList[j].style.top = mathHeight + "px";
+
+            domList[j].style.webkitTransition = "all "+ speedArr[j] +"s linear";
+            domList[j].style.transition = "all "+ speedArr[j] +"s linear";
+
+//            domList[j].addEventListener("transitionEnd",function () {
+//                danmu.removeChild(this);
+//            });
+//            domList[j].addEventListener("webkitTransitionEnd",function () {
+//                danmu.removeChild(this);
+//            });
+
+/*
+           clearInterval(domList[j].timer);
+           domList[j].timer = setInterval((function (index) {
+                    //console.log(index);
+                    var leader = parseInt(domList[index].style.left);
+                    console.log(leader);
+                    leader = leader - 10;
+                    domList[index].style.left = leader + "px";
+
+            })(j),300);*/
+        }
+        domList[domListLength-1].addEventListener("transitionEnd",function () {
+            danmu.parentNode.removeChild(danmu)
+        });
+        domList[domListLength-1].addEventListener("webkitTransitionEnd",function () {
+            danmu.parentNode.removeChild(danmu)
+        });
+
+        timer = setInterval(function () {
+            console.log(domList.length);
+            domList[num].style.left = "-300px";
+            num++;
+            if(num==domListLength){
+                clearInterval(timer);
+            }
+        },1500);
+
+    }
+
+/*
+
+
+        var textStyle="<font id=\"textStyle\">"+text.value+"</font>";
+
+        mathHeight = Math.round(Math.random()*danmuHeight)+"px";
+
+        var textLeft=danmu.offsetWidth+"px";
+
+        danmu.innerHTML=textStyle;
+
+        var textStyleObj = document.getElementById("textStyle");
+
+        textStyleObj.style.left=textLeft;
+        textStyleObj.style.top=mathHeight;
+
+        var x =parseInt(textStyleObj.style.left);
+
+        timer = setInterval("xunhuan("+x+")",100);
+
+    }
+    function xunhuan(left){
+        var textStyleObj = document.getElementById("textStyle");
+        textStyleObj.style.left=left;
+
+        var x=parseInt(textStyleObj.style.left);
+
+        if(x<textStyleObj.style.width){
+            document.getElementById("danmu").innerHTML="";
+            clearInterval(timer);
+        }else{
+            x-=18;
+        }
+
+        textStyleObj.style.left=x+"px";
+
+}
+
+*/
+
+
+</script
+>
+
+</body>
+</html>

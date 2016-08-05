@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>javascript弹幕</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        #play{
+            width:600px;
+            height:500px;
+            background-color:pink;
+        }
+
+        .danmu{
+            width:100%;
+            height:100%;
+            overflow: hidden;
+            z-index:9999;
+            position: relative;
+        }
+
+       .flyLeft{
+           width: 200px;
+           height: 200px;
+           position: absolute;
+           z-index: 9999;
+       }
+        .flyLeft .head{
+            width: 50px;
+            height: 50px;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            overflow: hidden;
+            margin-right: 10px;
+            float: left;
+
+        }
+        .head img{
+            width: 50px;
+            height: 50px;
+        }
+        .flyLeft .description{
+            display: inline-block;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            color: #ffad0d;
+            float: left;
+        }
+        .d_img{
+            margin-top: 50px;
+            height: 100px;
+            position: relative;
+        }
+        .d_img img{
+            max-width: 200px;
+            max-height: 100px;
+            position: absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            margin:auto;
+        }
+
+    </style>
+
+</head>
+
+<body>
+<div id="play"></div>
+<input type="button" id="btn" value="弹幕"/>
+
+<script>
+    var btn = document.getElementById("btn");
+    var Json = {
+        "name":"danmuData",
+        "data":[{'name':'one','head':'./images/che.png','des':'描述...','img':'./images/che.png','speed':'3'}
+                ,{'name':'two','head':'./images/hua.png','des':'描述...','img':'./images/hua.png','speed':'2'}
+                ,{'name':'three','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png','speed':'5'}
+                ,{'name':'four','head':'./images/che.png','des':'描述...','img':'./images/che.png','speed':'4'}
+                ,{'name':'five','head':'./images/hua.png','des':'描述...','img':'./images/hua.png','speed':'3'}
+                ,{'name':'six','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png','speed':'1'}],
+        "line":"1"
+    };
+    var Json2 = {
+        "name":"danmuData",
+        "target":"play",
+        "data":[{'name':'one','head':'./images/che.png','des':'描述...','img':'./images/che.png','speed':'2'}
+            ,{'name':'two','head':'./images/hua.png','des':'描述...','img':'./images/hua.png'}
+            ,{'name':'three','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png'}
+            ,{'name':'four','head':'./images/che.png','des':'描述...','img':'./images/che.png'}
+            ,{'name':'five','head':'./images/hua.png','des':'描述...','img':'./images/hua.png'}
+            ,{'name':'six','head':'./images/paoche.png','des':'描述...','img':'./images/paoche.png','speed':'2'}],
+//        "line":"1"
+    };
+    btn.onclick = function () {
+        danmuLeft(Json2);
+    };
+
+    function danmuLeft(Json) {
+        var data = Json.data,
+            line = Json.line,
+            targetDom = document.getElementById(Json.target),
+            danmu = document.createElement("div"),
+            timer = null,
+            danmuHeight = 0,
+            danmuWidth = 0,
+            dataLen = data.length,
+            speedArr = [],
+            speed,
+            mathWidth = 0,
+            mathHeight = 0,
+            html = "",
+            num = 0,
+            domList = [],
+            domListLength = 0;
+
+
+        danmu.className = "danmu";
+        targetDom.appendChild(danmu);
+        danmuWidth = danmu.offsetWidth;
+        danmuHeight = danmu.offsetHeight;
+
+        for (var i = 0; i < dataLen;i++) {
+            speed = data[i].speed || 4;
+            speedArr.push(speed);
+            html += "<div class='flyLeft'><div class='head'>";
+            html += "<img src=\"" + data[i].head + "\"></div>";
+            html += "<span class='description'>" + data[i].des + "</span>";
+            html += "<div class='d_img'><img src=\"" + data[i].img + "\"></div>";
+            html += "</div>";
+        }
+        danmu.innerHTML += html;
+
+        domList = danmu.getElementsByClassName("flyLeft");
+        domListLength = domList.length;
+        console.log(danmuWidth);
+
+        for (var j = 0; j < domListLength; j++) {
+            domList[j].index = j;
+            mathWidth = Math.round(Math.random() * danmuWidth + danmuWidth);
+            domList[j].style.left = danmuWidth + "px";
+            if(line==1){
+                mathHeight = danmuHeight*0.2;
+            }else{
+                mathHeight = Math.round(Math.random() * (danmuHeight - 200));
+            }
+            domList[j].style.top = mathHeight + "px";
+
+            domList[j].style.webkitTransition = "all "+ speedArr[j] +"s linear";
+            domList[j].style.transition = "all "+ speedArr[j] +"s linear";
+        }
+
+        domList[domListLength-1].addEventListener("transitionEnd",function () {
+            targetDom.removeChild(danmu)
+        });
+        domList[domListLength-1].addEventListener("webkitTransitionEnd",function () {
+            targetDom.removeChild(danmu)
+        });
+
+        timer = setInterval(function () {
+            console.log(domList.length);
+            domList[num].style.left = "-300px";
+            num++;
+            if(num==domListLength){
+                clearInterval(timer);
+            }
+        },1500);
+
+    }
+
+</script>
+
+</body>
+</html>

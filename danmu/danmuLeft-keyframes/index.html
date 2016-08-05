@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>danmu测试</title>
+    <link rel="stylesheet" href="./danmuLeft.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            max-width: 720px;
+            margin:0 auto;
+        }
+        .bd{
+            width: 100%;
+            height: 100%;
+            background-color: yellow;
+        }
+        .box{
+            width: 100%;
+            height: 300px;
+            background-color: pink;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bd">
+        <div class="box" id="danmuTarget"></div>
+    </div>
+
+</body>
+</html>
+<script>
+    window.onload =function () {
+
+        danmuAJAX();
+    }
+
+
+</script>
+<script src="danmuLeft.js"></script>
