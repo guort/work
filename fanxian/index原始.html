@@ -47,10 +47,11 @@
 
 </body>
 </html>
+<script src="xdTools-1.0.js"></script>
 <script>
 
 
-    fanXian('fx');
+    //fanXian('fx');
 
     function fanXian(id) {
         var targetDom = document.getElementById(id),
@@ -101,6 +102,33 @@
 
 
     }
+
+var t = +new Date;
+    var a = contrast_time(t,);
+    console.log(a);
+
+
+    function contrast_time(){
+        var t=this
+                ,now=+new Date
+                ,arr=formatTime("Y-M-D-h-m-s",now).split('-')
+                ,yy=arr[0]
+                ,mm=arr[1]
+                ,dd=arr[2]
+                ,todayend=+new Date(yy+'/'+mm+'/'+dd+' 23:59:59') //计算当前结束时间时间戳
+                ,st=todayend-now;  //计算当天当前时间到当天完时间长
+        t.fn=function(a,b){
+            var _=now-a,bool=(st+_)<86400000;
+            if(_<=60000)return '刚刚';
+            else if(bool){
+                if(_<3600000)return t.mfl(_/60000)+'分钟前';
+                else return t.mfl(_/3600000)+'小时前';
+            }else return b;
+        }
+        t.mfl=function(e){return Math.floor(e);}
+    }
+
+
 
 
 </script>
