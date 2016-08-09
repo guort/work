@@ -38,38 +38,42 @@ img{
 .listRight .listRightCon{
     width: 100%;
     height: 100%;
+    padding:12px;
     border-bottom: 1px solid #e9e9e9;
 }
-.listRightCon .fxUser{
-    height: 45px;
-    float: left;
-    position: relative;
-}
-.listRightCon span{
-    margin-top: 12px;
+.listRightCon .top{
     display: block;
     font-size: 13px;
     height: 22px;
     line-height: 22px;
 }
-.fxUser span:nth-child(1){
+.listRightCon .down{
+    display: block;
+    font-size: 13px;
+    height: 22px;
+    line-height: 22px;
+}
+.top span:nth-child(1){
     font-size: 14px;
     color: #52649a;
 }
-.fxUser span:nth-child(2){
-    font-size: 13px;
-    color: #979797;
-}
-.listRightCon .fxMonTim{
-    height: 45px;
+.top span:nth-child(2){
     float: right;
     font-size: 13px;
-    text-align: right;
-    margin-right: 10px;
-}
-.fxMonTim span:nth-child(1){
     color: #da2d1e;
 }
-.fxMonTim span:nth-child(2){
+.down span:nth-child(1){
+    color: #969696;
+}
+.down span:nth-child(2){
+    float: right;
     color: #979797;
+}
+.clearfix:before,.clearfix:after{
+    content: ".";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
 }
