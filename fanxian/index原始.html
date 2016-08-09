@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>fanxian</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .box{
+            width: 100%;
+            height: 600px;
+            background-color: pink;
+            margin:0 auto;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="box" id="fx">
+            <!--
+        <div class = "listP">
+            <div class="list">
+                <img src="./images/tx.jpg">
+                <div class="listRight">
+                    <div class="listRightCon">
+                        <div class="fxUser">
+                            <span>黄晓明</span>
+                            <span>商城购物</span>
+                        </div>
+                        <div class="fxMonTim">
+                            <span>返现180元</span>
+                            <span>刚刚</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+            -->
+</div>
+
+</body>
+</html>
+<script>
+
+
+    fanXian('fx');
+
+    function fanXian(id) {
+        var targetDom = document.getElementById(id),
+                dom = document.createElement("div"),
+                data = '',
+                dataLen = 0,
+                i=0,
+                html = "";
+        dom.className = "listP";
+        /*for(;i<dataLen;i++){
+            html+='<div class=\"list\"><img src=\"'+ data[i].headImg+'\">';
+            html+='<div class=\"listRight\"><div class=\"listRightCon\"><div class=\"fxUser\">';
+            html+='<span>'+ data[i].name +'</span><span>'+ data[i].place +'</span></div>';
+            html+='<div class=\"fxMonTim\"><span>'+ data[i].money +'</span><span>'+ data[i].time +'</span></div>';
+            html+='</div></div></div>';
+        }
+        dom.innerHTML = html;
+*/
+        //console.log(dom);
+
+
+        getData();
+        //获取数据
+        function getData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("get","01.php");
+            xhr.send(null);
+            xhr.onreadystatechange = function () {
+                if(xhr.status ==200 && xhr.readyState == 4){
+                    data = JSON.parse(xhr.responseText);
+                    dataLen = data.length;
+                    for(;i<dataLen;i++){
+                        html+='<div class=\"list\"><img src=\"'+ data[i].headImg+'\">';
+                        html+='<div class=\"listRight\"><div class=\"listRightCon\"><div class=\"fxUser\">';
+                        html+='<span>'+ data[i].name +'</span><span>'+ data[i].place +'</span></div>';
+                        html+='<div class=\"fxMonTim\"><span>'+ data[i].money +'</span><span>'+ data[i].time +'</span></div>';
+                        html+='</div></div></div>';
+                    }
+                    dom.innerHTML = html;
+                    targetDom.appendChild(dom);
+                }
+            };
+
+        }
+
+
+
+
+
+    }
+
+
+</script>
