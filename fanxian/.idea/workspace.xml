@@ -26,46 +26,22 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1159">
-              <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-              <folding>
-                <element signature="e#2792#2974#0" expanded="false" />
-                <element signature="e#3006#5024#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="share_https.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/share_https.js">
+      <file leaf-file-name="fanxian.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fanxian.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2200">
-              <caret line="167" column="8" selection-start-line="167" selection-start-column="4" selection-end-line="167" selection-end-column="8" />
+            <state relative-caret-position="534">
+              <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
               <folding>
-                <marker date="1470712909946" expanded="true" signature="1477:1528" ph="..." />
-                <marker date="1470712909946" expanded="true" signature="1591:1642" ph="..." />
-                <marker date="1470712909946" expanded="true" signature="1664:1756" ph="..." />
-                <marker date="1470712909946" expanded="true" signature="1778:1865" ph="..." />
-                <marker date="1470712909946" expanded="true" signature="2563:3152" ph="..." />
-                <marker date="1470712909946" expanded="true" signature="3525:3630" ph="..." />
-                <marker date="1470712909946" expanded="true" signature="6457:6778" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xdTools-1.0.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xdTools-1.0.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="223" column="0" selection-start-line="223" selection-start-column="0" selection-end-line="275" selection-end-column="9" />
-              <folding>
+                <element signature="n#!!block;n#getData#0;n#!!block;n#fanXian#0" expanded="false" />
+                <element signature="n#!!block;n#xmlObj#0" expanded="false" />
                 <element signature="n#!!block;n#setAjax#0" expanded="false" />
-                <marker date="1470391361484" expanded="true" signature="25367:25383" ph="..." />
-                <marker date="1470391361484" expanded="true" signature="25541:25557" ph="..." />
-                <marker date="1470391361484" expanded="true" signature="25723:25739" ph="..." />
-                <marker date="1470391361484" expanded="true" signature="25836:25876" ph="..." />
-                <marker date="1470391361484" expanded="true" signature="26049:26068" ph="..." />
               </folding>
             </state>
           </provider>
@@ -90,6 +66,7 @@
         <option value="$PROJECT_DIR$/index.css" />
         <option value="$PROJECT_DIR$/main.js" />
         <option value="$PROJECT_DIR$/share_https.js" />
+        <option value="$PROJECT_DIR$/fx.js" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -247,15 +224,15 @@
       <updated>1470625994375</updated>
       <workItem from="1470625995687" duration="22441000" />
       <workItem from="1470662473330" duration="6095000" />
-      <workItem from="1470705841326" duration="8091000" />
+      <workItem from="1470705841326" duration="8484000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36627000" />
+    <option name="totallyTimeSpent" value="37020000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
+    <frame x="-8" y="-8" width="1370" height="744" extended-state="1" />
     <editor active="false" />
     <layout>
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -300,14 +277,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2792#2974#0" expanded="false" />
-            <element signature="e#3006#5024#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
+    <entry file="file://$PROJECT_DIR$/fanxian.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="7" />
@@ -315,11 +289,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fx.js">
+    <entry file="file://$PROJECT_DIR$/fanxian.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getData#0;n#!!block;n#fanXian#0" expanded="false" />
+            <element signature="n#!!block;n#xmlObj#0" expanded="false" />
+            <element signature="n#!!block;n#setAjax#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -335,10 +313,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#2792#2974#0" expanded="false" />
-            <element signature="e#3006#5024#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -350,7 +325,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
+    <entry file="file://$PROJECT_DIR$/fanxian.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="6" />
@@ -358,11 +333,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fx.js">
+    <entry file="file://$PROJECT_DIR$/fanxian.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#!!block;n#getData#0;n#!!block;n#fanXian#0" expanded="false" />
+            <element signature="n#!!block;n#xmlObj#0" expanded="false" />
+            <element signature="n#!!block;n#setAjax#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -385,18 +364,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.css">
+    <entry file="file://$PROJECT_DIR$/fanxian.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fx.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -432,14 +403,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/fanxian.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="116" column="0" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#getData#0;n#!!block;n#fanXian#0" expanded="false" />
+            <element signature="n#!!block;n#xmlObj#0" expanded="false" />
+            <element signature="n#!!block;n#setAjax#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fx22.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-680">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="80" column="26" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
-          <folding>
-            <element signature="e#2792#2974#0" expanded="false" />
-            <element signature="e#3006#5024#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="192">
+          <caret line="29" column="6" selection-start-line="29" selection-start-column="6" selection-end-line="29" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
