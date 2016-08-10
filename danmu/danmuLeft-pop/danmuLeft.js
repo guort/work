@@ -101,7 +101,7 @@ function startDanmu(Json, time) {
         //animate(dom,-domW,speed*1000);
 
         dom.addEventListener("webkitTransitionEnd", function () {
-            danmu.removeChild(this);
+            //danmu.removeChild(this);
         });
         //删除数组中第一个元素
         Json.data.shift();
