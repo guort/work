@@ -1,0 +1,1 @@
+createJS([PAGE.COMMON+"jc/scratchCard_https.js"])

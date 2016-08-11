@@ -1,0 +1,180 @@
+@charset "utf-8";
+html{font-family:"";background:#f0f0f0;}
+body,p,div,span,ul,li,em,b,input,textarea,img{margin:0;padding:0;height:100%;font-size:1em;border:none;}
+input,textarea{-webkit-appearance:none;}
+ul li{list-style:none;}
+a{text-decoration: none; }
+i{font-style:normal;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.clearfix{display:block}
+.clear{clear:both;overflow:hidden;_zoom:1;}
+.headTitle{width:100%;background: #ff6654;color:#ffffff;text-align:center;font-size:1.3em;line-height: 2em;}
+.contenter{width:91%;margin: 0 auto;}	
+.comStyle{line-height: 1.5em;letter-spacing:-0.05em;}
+.complete{color:#696969;margin-top:1em;}
+.statement{color:#ff6654;margin:1em 0 ;}
+select{appearance:none;-webkit-appearance:none;border:none;font-size:12px;white-space:nowrap;}
+.kuaiWith li.addWrap{padding:5px 5px 0 0;width:90%;height:2em;border:none;line-height:1.6em;color:#A9A9A9;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;word-wrap: normal;}
+.kuaiWith li.addWrap P{white-space:nowrap;width:90%;height:2em;border:none;line-height:1.6em;overflow: hidden;text-overflow: ellipsis;word-wrap: normal;}
+.province{margin-right:5px;}
+.city{margin-right:5px;}
+/*.city{width:108px ;}*/
+
+.inforBox{background: #ffffff;}
+/*头像*/
+.headPic{width:25%;margin:0 auto;padding:1.3em 0;}
+.headimg{border-radius:50%;}
+.headPic img{border-radius:50%;border:.3em solid #e5e5e5;width:90%;height:auto;}
+.headName{display:block;color:#000000;text-align: center;margin-top:1em;}
+/*年龄*/
+.commBor{padding-top:1.2em;border-top:2px solid #f0f0f0;}
+.ageBox{}
+.fl{float:left;}
+.fr{float:right;}
+.ageText{width:27%;}
+.iconAagex{padding:0 .5em;}
+
+.kuaiWith{width:72.5%;overflow: hidden;}
+.ageDetail li{float:left;line-height:1.2em;width:33%;margin-bottom:1.3em;}
+.ageDetail .iconLast{width:40%;}
+.ageRadio li span{float:left;width:1em;height:1em;margin-right:.3em;background: url(img/h_03.png) no-repeat;background-size:contain;}
+.ageRadio li span img{width:100%;height:auto;}
+.ageRadio li span.ageBg{background: url(img/radio_green.png) no-repeat;background-size:contain;}
+/*性别*/
+.sexDetail{position:relative;}
+.sexText{margin-top:1.2em;}
+.zwomen{margin-left:2em;}
+.z_mStyle{width:25%;float:left;text-align: center;}
+.z_mStyle img{width:100%;height:auto;}
+.z_mStyle b{display:block;margin:.3em 0 .5em;}
+.sureLeft{width:1.3em;height:auto;position:absolute;top:48%;left:16%;}
+.sureRite{width:1.3em;height:auto;position:absolute;top:48%;left:54%;}
+/*.icoRight{display: none;}*/
+/*选择地区*/
+
+.areaDetail li{width:100%;}
+.areaInfor{width:90%;border-radius:.3em;line-height:2em;border:2px solid #ebebeb; resize: none;    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;}
+.areaBox .areaText{margin-top:.4em;}
+/*详细地址*/
+.addreInfor{padding:.3em 0 0 .3em;color:#b6b6b6;font-size:1.1em;}
+.notice{width:92%;margin-left:4%;color:#ff6654;font-size: .9em;line-height: 2.2em;}
+/*手机号*/
+.verifyBox{margin:1em 0;}
+.verify{width:47%;margin-right:5%;padding:.3em 0 0 .3em;}
+.verifyBtn{width:35%;display: inline-block;background: #06b011;border-radius:.3em;line-height: 2.2em;color:#ffffff;text-align:center;font-weight: inherit;}
+.submit{display: block;font-size:1.5em;line-height:2.4em;text-align: center;border-radius:.3em;background: #ff6654;color:#ffffff;margin:1em 0;}
+#maskBG {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 10000;
+    -webkit-transition: all 400ms ease;
+}
+#infoStr {
+    position: absolute;
+    width:70%;
+    height:50px;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    background: rgba(0,0,0,.5);
+    top: 50%;
+    left: 50%;
+    -webkit-transform: perspective(1px) translate3D(-50%,-50%,0);
+    z-index: 10;
+    border-radius: 6px;
+    padding: 10px;
+    opacity: 0;
+    margin: -60px 0 0 0;
+    box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: center;
+}
+@media screen and (min-width:320px) and (max-width:359px){
+.headTitle{font-size:1.3em;line-height: 2em;}
+.comStyle{line-height: 1.6em;letter-spacing:-0.01em;font-size: .8em;}
+.complete{margin-top:1em;}
+.statement{margin:.5em 0 ;}
+/*头像*/
+.headPic{padding:.6em 0;}
+.headimg{border-radius:50%;}
+.headPic img{border-radius:50%;border:.3em solid #e5e5e5;width:90%;height:auto;}
+.headName{display:block;color:#000000;text-align: center;margin-top:1em;}
+/*年龄*/
+.commBor{padding-top:1.2em;}
+.iconAagex{padding:0 .7em;width:.6em;}
+.iconAagex img{width:100%;height:auto;}
+.kuaiWith{width:72.5%;}
+.kuaiWith li.addWrap {line-height: 1em;font-size: .9em;}
+.ageDetail li{line-height:1.2em;margin-bottom:.5em;font-size:.8em;}
+.ageDetail .iconLast{width:40%;}
+.iconImg{width:1em;margin-right:.3em;}
+.iconAagex{font-size:.4em;}
+/*性别*/
+.sexText{margin-top:1.2em;} 
+.zwomen{margin-left:2em;}
+.z_mStyle b{margin:.3em 0 .5em;}
+.sureLeft{width:1em;}
+.sureRite{width:1em;}
+/*选择地区*/
+.areaInfor{border-radius:.3em;line-height:1.8em;} 
+.areaBox .areaText{margin-top:.4em; font-size: .8em;}
+/*详细地址*/
+.addreInfor{padding:.3em 0 0 .3em;font-size:1.1em;}
+.notice{font-size: .9em;line-height: 1.6em;}
+/*手机号*/
+.verifyBox{margin:1em 0;}
+.verify{padding:.3em 0 0 .3em;}
+.verifyBtn{border-radius:.3em;line-height: 2.6em;font-size:.8em;}
+.submit{font-size:1.2em;line-height:2em;border-radius:.3em;margin:1em 0;}
+}
+@media screen and (min-width:360px) and (max-width:413px){
+.headTitle{font-size:1.3em;line-height: 2em;}
+.comStyle{line-height: 1.5em;letter-spacing:-0.01em;font-size:.9em;}
+.complete{margin-top:1em;}
+.statement{margin:.6em 0 ;}
+/*头像*/
+.headPic{padding:.6em 0;}
+.headimg{border-radius:50%;}
+.headPic img{border-radius:50%;border:.3em solid #e5e5e5;width:90%;height:auto;}
+.headName{display:block;color:#000000;text-align: center;margin-top:1em;}
+/*年龄*/
+.commBor{padding-top:1.2em;}
+.iconAagex{padding:0 .6em;width:.6em;}
+.iconAagex img{width:100%;height:auto;}
+.kuaiWith{width:72.5%;}
+.ageDetail li{line-height:1.2em;margin-bottom:.8em;font-size:.9em;}
+.ageDetail .iconLast{width:40%;}
+.iconImg{width:1em;margin-right:.3em;}
+/*性别*/
+.sexText{margin-top:1.2em;}
+.zwomen{margin-left:2em;}
+.z_mStyle b{margin:.3em 0 .5em;}
+.sureLeft{width:1.3em;}
+.sureRite{width:1.3em;}
+/*选择地区*/
+.areaInfor{border-radius:.3em;line-height:1.8em;}
+.areaBox .areaText{margin-top:.4em;    font-size: .9em;}
+/*详细地址*/
+.addreInfor{padding:.3em 0 0 .3em;font-size:1.1em;}
+.notice{font-size: .9em;line-height: 1.6em;}
+/*手机号*/
+.verifyBox{margin:1em 0;}
+.verify{padding:.3em 0 0 .3em;}
+.verifyBtn{border-radius:.3em;line-height: 2.6em;font-size:.8em;}
+.submit{font-size:1.5em;line-height:2.4em;border-radius:.3em;margin:1em 0;}
+}
+.locationbox{position:fixed;display:none;width:100%;top:100px;left:0;background:#fff;}
+.locationbox .divBox{position:absolute;width:100%;vertical-align: middle;height:100%;left:0;top:32px;background:#fff;-webkit-overflow-scrolling:touch;overflow:auto;box-shadow:0 10px 6px #CDCDCD}
+.headBox{position:relative;height:30px;background:rgb(248, 248, 248);border-top:1px solid rgba(221,221,221,1.00);border-bottom:1px solid rgba(221,221,221,1.00);z-index:1}
+.completeB{position:absolute;width:45px;line-height:30px;right:0;text-align:center;color:rgba(0,132,255,1.00)}
+.selectList{border-bottom:1px solid #eee;line-height:25px;box-sizing:border-box;text-indent:4px}
+.select{background:rgba(229,229,229,1.00);color:rgba(0,140,255,1.00)}

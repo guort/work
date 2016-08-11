@@ -1,0 +1,66 @@
+/*全局*/
+html{width:100%;height:100%;}
+body{height:100%;width:100%;padding:0;margin:0;position:relative; color:#434343;font:13px weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;}
+ul,ul li,ol,ol li,dl,dl dd,h3,h4,p,a,span,div{ list-style:none; margin:0; padding:0; color:#434343;}
+a{text-decoration:none;}
+
+.title,.gnum{color:#ed5759; padding-left:18px; font-size:14px; line-height:30px; background:#eee; position:relative;}
+.title:before,.gnum:before{content: '';display:block;position:absolute;width:8px;height:15px; background:#ed5759; left:5px; top:50%; -webkit-transform:translateY(-50%);}
+.title .shuzhi{padding-left:8px;}
+.moneybox .list{padding:39px 0 0 18px;}
+.list{padding:70px 0 0 18px;}
+.list li{min-height:50px; box-sizing:border-box; padding:8px 0 6px 0; border-bottom:1px solid #e5e5e5; position:relative;}
+.list li span{color:#089d0f; position:absolute; right:15px; top:50%; -webkit-transform:translateY(-50%); text-align:right; display:inline-block; width:37%;}
+.list li span font{float:left; color:#434343;}
+.list li span.on{color:#ea5c3a;}
+.list li.tmd{height:auto; border:0; text-align:center; padding-top:80px;}
+.list li.tmd>img{width:80px; padding-bottom:5px; margin-left:-18px;}
+.tab{padding:8px 0; border-bottom:2px solid #e5e5e5; width:100%; position:fixed; left:0; top:0; background:#fff; z-index:100;}
+.tab span{display:inline-block; width:50%; text-align:center; font-size:16px; font-weight:900; position:relative;}
+.tab span.tab1:before{content: '';display:block;position:absolute;width:1px;height:20px; background:#434343; right:-.5px; top:50%; -webkit-transform:translateY(-50%);}
+.tab span.tab1:after,.tab span.tab2:after{content:' ';display:none;position:absolute;width:100%;height:3px; background:#e11520; right:0; bottom:-8px;}
+.tab span.on{color:#ed5759;}
+.tab span.on:after{display:block;}
+.nomx{font-size:15px; text-align:center; line-height:400px; margin-left:-18px;}
+.prizename{width:55%;}
+.gnum{color:#ea5c3a; position:absolute; top:100%; width:100%; border-bottom:1px solid #c9c9c9;}
+.moneybox .gnum{display:none;}
+@-webkit-keyframes loading{
+	to{-webkit-transform:rotate(360deg);}
+}
+@-moz-keyframes loading{
+	to{-moz-transform:rotate(360deg);}
+}
+@keyframes loading{
+	to{transform:rotate(360deg);}
+}
+.loading {
+  width: 5px;
+  height: 5px;
+  margin: 30px auto;
+  border-radius: 50%;
+  box-shadow: 0 -10px 0 0 #000,10px 0px 0 #C0C0C0,0 10px 0 0 #808080,-10px 0 0 #404040, -7px -7px 0 0 #202020,7px -7px 0 #C0C0C0,7px 7px 0 0 #A0A0A0,-7px 7px 0 #606060;
+  -webkit-animation: loading 1s steps(8,end) infinite;
+  animation: loading 1s steps(8,end) infinite;
+  -moz-animation: loading 1s steps(8,end) infinite;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  z-index: 100000;
+  display: none;
+}
+
+#maskBG{position:fixed; top:0; left:0; width:100%; height:100%; display:none; z-index: 1000001; -webkit-transition:all 400ms ease;}
+#infoStr{position:absolute;text-align:center;color:#fff;font-size:16px;background:rgba(0,0,0,.6);top:50%;left:50%;-webkit-transform:perspective(1px) translate3D(-50%,-50%,0);z-index:10;border-radius:6px;padding:10px;opacity:0;margin:-60px 0 0 0;box-sizing:border-box;display: -webkit-box; -webkit-box-orient: horizontal;-webkit-box-pack: center; -webkit-box-align: center;}
+
+#infoStr.MoveShow{-webkit-animation:iShow 400ms forwards;}
+#infoStr.MoveHide{-webkit-animation:iHidd 350ms forwards;}
+@-webkit-keyframes iShow{
+	0%{opacity:0;margin:-60px 0 0 0}
+	100%{opacity:1;margin:0 0 0 0}
+}
+
+@-webkit-keyframes iHidd{
+	0%{opacity:1;margin:0 0 0 0;}
+	100%{opacity:0;margin:-60px 0 0 0;}
+}

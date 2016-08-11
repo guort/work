@@ -1,0 +1,71 @@
+@charset "utf-8";
+/*全局*/
+body,div,p,ul,ol,li,dl,dt,dd,form,input,table,img,h1,h2,h3,h4,h5,h6,header,section,footer,nav,figure,figcaption,article{margin:0;padding:0}
+header,section,footer,nav,figure,figcaption,article,menu{display:block}
+body{font-size:12px;font-family:"微软雅黑";}
+ul,ol{list-style:none;}
+a,a:hover{text-decoration:none;color:#393737;}
+img{border:none;display:inline-block;vertical-align:top;}
+h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal;}
+em,i{font-style:normal;}
+.l,.left{float:left;display:inline-block;}
+.r,.right{float:right;display:inline-block;}
+.clear:after{content:'';display:block;width:0;height:0;overflow:hidden;clear:both;}
+header,nav,section,footer{min-width:320px;}
+.w280{min-width:280px;margin:0 2%;}
+.w300{min-width:300px;margin:0 3%;}
+
+
+html{font-size:62.5%}
+body{font-family:"微软雅黑";color: #fff;}
+html,body{
+	-webkit-user-select:none;
+	-o-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+	-webkit-text-size-adjust:none;
+	-o-text-size-adjust:none;
+	-ms-text-size-adjust:none;
+	text-size-adjust:none;
+	height: 100%;
+	width: 100%;
+	background: #F5F6F5;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.wrap{
+	width:100%;
+	height:100%;
+	overflow:hidden
+	position:relative;
+	background: url(https://qa-h5.mtq.tvm.cn/yao/btv7/img/bodybg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.wrap .promptDl{
+	height: 47%;
+	width: 100%;
+}
+.promptDl dt{
+	width: 28.8%;
+	margin: 0 auto;
+  
+}
+.promptDl dt img{
+	width: 100%;
+	/* height: 126px; */
+	margin-top: 28px;
+}
+.promptDl dd{
+	width: 90%;
+	margin: 16px auto;
+	font-size: 1.6rem;
+	line-height: 2.8rem;
+	text-indent: 3.6rem;
+}
+.promptDl dd.txt{text-align:center; text-indent:0;}
+.flow{
+	width: 90%;
+	margin: 12px auto;
+}
+.flow img{
+	width: 100%;
+}

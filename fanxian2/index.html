@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>fanxian</title>
+    <link rel="stylesheet" href="fanxian.css">
+    <style>
+        html,body{
+            width: 100%;
+            height: 100%;
+            background-color: blue;
+        }
+        .top2{
+            width: 100%;
+            height: 200px;
+            background-color: yellow;
+        }
+        .container{
+            width: 100%;
+            height: 300px;
+            background-color: pink;
+            margin:0 auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top2"></div>
+<div class="container"></div>
+
+</body>
+</html>
+<!--<script src="xdTools-1.0.js"></script>-->
+<!--<script src="share_https.js"></script>-->
+<script src="./fanxian.js"></script>
+<script>
+    window.onload =function () {
+        cashback();
+
+        function getSearch(str){
+    var s=decodeURIComponent(str||location.search.substr(1)),o={}
+    if(s.length>2){
+        var fg=s.indexOf("&amp;")>-1?"&amp;":"&",arr=(s!==""&&s.split(fg))||[""],arrL=arr.length-1,i=-1,key=null,v=null,a=null;
+            do{
+                var a=arr[++i].split("=");
+                if(a){
+                        o[a[0]]=a[1]
+                }
+            }while(i<arrL)  
+        }
+        return o            
+    };
+
+    var a = getSearch('http://192.168.28.120/test_yao/gyf/share.html');
+    console.log(a);
+    }
+</script>
+

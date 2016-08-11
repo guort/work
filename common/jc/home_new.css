@@ -1,0 +1,71 @@
+/*全局*/
+html{width:100%;height:100%;}
+body{height:100%;width:100%;padding:0;margin:0;position:relative; background:#eee; color:#434343;font:14px weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;overflow:hidden;overflow-y:auto;}
+ul,ul li,ol,ol li,dl,dl dd,h3,h4,p,a,span,div{ list-style:none; margin:0; padding:0; color:#000;}
+a{text-decoration:none;}
+
+.banner{position:relative; width:100%; height:140px; text-align:center; overflow:hidden; padding-top:10px; box-sizing:border-box; margin-bottom:-10px;}
+.bannerBG{width:100%; position:absolute; top:0; left:50%; min-height:140px; -webkit-transform:translateX(-50%); z-index:-1;}
+.userimg{border-radius:50%; width:80px; height:80px;}
+.userspan{display:inline-block; background:rgba(255,255,255,.3); width:80px; height:80px; padding:4px; border-radius:50%; border:0; margin:0;}
+.username{padding-right:20px; background:url(https://qa-h5.mtq.tvm.cn/yao/common/img/Sprite.png) no-repeat right -232px; min-height:24px; font-size:17px; color:#fff; background-size:28px; -webkit-transform:translate3d(0,0,0);}
+.banner span.gowri{right:0; position:absolute; top:22%; -webkit-transform:translateY(-50%); background:rgba(255,255,255,.2); font-size:12px; padding:2px 6px 2px 10px; color:#fff; border-radius:10px 0 0 10px;}
+.list{padding:0 0 10px;}
+.list>li{height:50px; border-bottom:1px solid #f0f0f0; border-top:1px solid #f0f0f0; background:#fff; line-height:50px; box-sizing:border-box; padding:0 20px;}
+.list>li ol li{line-height:18px;}
+.list>li.Walletm ol li font{font-size:13px;}
+.list>li.Walletm ol{padding:10px 10px 0; border-bottom:0; border-top:1px solid #f0f0f0;}
+/*.list .lis{opacity:0;}*/
+.list>li>span{display:inline-block; height:50px; padding-left:40px; line-height:50px; background:url(https://qa-h5.mtq.tvm.cn/yao/common/img/Sprite.png) no-repeat left 9px; background-size:32px; -webkit-transform:translate3d(0,0,0);}
+.list>li>a{float:right; color:#959595; font-size:12px;}
+.list>li.news,.list>li.Wallet,.list>li.Award,.list li.work,.list li.Win,.list>li.viptq,.list>li.Post,.list>li.myOrder,.list>li.dingdan{margin-top:10px;}
+.list>li.Walletm{height:auto; border-top:0; line-height:20px; padding-bottom:10px;}
+.list>li.Walletm p span{font-size:21px; color:#e95223; width:100%; padding-top:3px; text-align:center; display:block; float:left;}
+.list>li.Walletm p{line-height:22px; padding:8px 60px 3px 70px; box-sizing:border-box; display:inline-block; width:100%;}
+.list>li.Walletm p font{float:left; margin-left:-70px; padding-top:3px;}
+.list>li.Walletm p label{border:1px solid #c0c0c0; padding:2px 11px; opacity:.8; border-radius:6px; float:right; margin-right:-56px;}
+.list>li.Award>span{background-position:left -33px;}
+.list>li.work>span{background-position:left -75px;}
+.list>li.Win>span{background-position:left -117px;}
+.list>li.dingdan>span{background-position:left -467px;}
+.list>li.viptq>span{background-position:left -288px;}
+.list>li.Post>span{background-position:left -333px;}
+.list>li.myOrder>span{background-position:left -378px;}
+.list>li.news>span{background-position:left -422px;}
+.list>li.Walletm.hsmoney>p{display:none;}
+.list>li.Walletm.hsmoney>ol{border-top:0;}
+
+.list ol{width:100%; padding:10px; display:inline-block; box-sizing:border-box; background:#fff; border-bottom:1px solid #f0f0f0; margin-bottom:-5px;}
+.list ol>li{float:left; width:25%; text-align:center; opacity:.8; font-size:13px; color:#434343;}
+.list ol>li font{color:#f34f25;}
+.list ol.myWin>li{width:25%;}
+.list ol.myWin>li em{display:inline-block; margin-bottom:-8px; width:40px; height:30px; background:url(https://qa-h5.mtq.tvm.cn/yao/common/img/Sprite.png) no-repeat 5px -202px; background-size:30px; -webkit-transform:translate3d(0,0,0);}
+.list ol.myWin>li.kq em{background-position:5px -152px;}
+.list ol.myWin>li.sw em{background-position:5px -176px;}
+.list ol.myWin>li font{padding-top:4px;}
+.list ol.myWin>li font span{color:#434343;}
+.red{color:#e31f24;}
+.cz{float:right; background:#09bb07; color:#fff; font-size: 12px; height:28px; line-height:28px; padding:0 20px; border-radius:5px; margin:11px 10px 0 0;}
+.hidden,.list ol.hidden{ display:none;}
+
+.topg{-webkit-animation:topg 1000ms forwards ease-in;-webkit-transform:translate3d(0,0,0);}@-webkit-keyframes topg{0%{margin-top:-100%;}60%{margin-top:-0;}75%{margin-top:-3%;}100%{margin-top:0;}}
+.leftg{-webkit-animation:leftg 600ms forwards ease-out;}@-webkit-keyframes leftg{0%{margin-left:150%;opacity:0;}70%{opacity:0;}80%{opacity:1;}100%{margin-left:0;opacity:1;}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
