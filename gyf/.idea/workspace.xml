@@ -33,24 +33,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="award_https.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jc/award_https.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1470799876037" expanded="true" signature="1787:1836" ph="..." />
-                <marker date="1470799876037" expanded="true" signature="1868:2276" ph="..." />
-                <marker date="1470799876037" expanded="true" signature="1877:2266" ph="..." />
-                <marker date="1470799876037" expanded="true" signature="5541:6151" ph="..." />
-                <marker date="1470799876037" expanded="true" signature="6574:6679" ph="..." />
-                <marker date="1470799876037" expanded="true" signature="9348:9669" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -202,12 +184,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1470882888437</updated>
-      <workItem from="1470882891479" duration="1772000" />
+      <workItem from="1470882891479" duration="2384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1772000" />
+    <option name="totallyTimeSpent" value="2384000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="18" y="0" width="1370" height="744" extended-state="1" />
@@ -247,10 +229,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/111.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jc/award_https.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1470799876037" expanded="true" signature="1787:1836" ph="..." />
@@ -260,14 +250,6 @@
             <marker date="1470799876037" expanded="true" signature="6574:6679" ph="..." />
             <marker date="1470799876037" expanded="true" signature="9348:9669" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/111.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
