@@ -386,45 +386,113 @@ function cashback() {
     domP.appendChild(dom);
     targetDom.appendChild(domP);
     domPheight = domP.offsetHeight;
-
-    //滚动加载
-    domP.onscroll = function () {
-        var domH = dom.offsetHeight;
-        var sTop = domP.scrollTop;
-        //console.log(domH);
-        if(domH-domPheight-sTop<=0){
-            getData();
-        }
-    };
+	_load['display']='block';
+    //
+    // //滚动加载
+    // domP.onscroll = function () {
+    //     var domH = dom.offsetHeight;
+    //     var sTop = domP.scrollTop;
+    //     //console.log(domH);
+    //     if(domH-domPheight-sTop<=0){
+    //         getData();
+    //     }
+    // };
 
     getData();
     //获取数据，并设置
     function getData() {
         var domCon = document.createElement("div");
         var fxAjax = setAjax('get','http://q-cdn.mtq.tvm.cn/wtopic/jssdk/354e6b14b65b79ad_yue.js');
-        fxAjax.send(null);
+        fxAjax.send();
         fxAjax.callBack = function ($data) {
             var getD = JSON.parse($data).data;
-            var type = '',hitime,timeCount=new contrast_time;
+            var li,type = '',place = '',hitime,timeCount=new contrast_time;
             dataLen = getD.length;
             //拼接html结构
+			/*var data=toObject($data),lists=data.data;
+			if(!lists)lists=[];
+			if(!pg_type){
+				var lists=data.lotteryData.concat(lists);
+				lists.sort(function(a,b){
+					return b['create_timestamp']-a['create_timestamp'];
+				});
+			}
+			sethtml(domP,create(lists));
+
+			function create(list){
+				var html='';
+				if(list){
+					for(var i=0,li;i<list.length;i++){
+						var li=list[i],type=+li.type,money;
+						if(li.nickname){
+							switch(pg_type){
+								case 'dajiang':
+									if(type!=103){
+										if(type==102||type==108)
+											money=li.money+(type==108?"元余额红包":"元现金红包");
+										else money=li.prize;
+										hfn();
+									}
+									break
+								default:
+									switch(type){
+										case 102:case 103:
+										money=li.money+"元现金红包";
+										hfn();
+										break
+										case 6:case 7:case 104:
+										money=li.money+'元';
+										hfn();
+										break
+									}
+									break
+							}
+							function hfn(){
+								var _time='',_left,hitime=+li.create_timestamp;
+								switch(type){
+									case 104:_left='拆开领走';break
+									case 6:_left='返现';li.content='投资网信理财';break
+									case 7:_left='返';li.content='商城购物';break
+									default:_left='领走了';break
+								}
+								html+='<li>\
+							<img src="'+getHead(li.headimg)+'" onerror="imgErr(this)">\
+							<p><font>'+li.nickname+'</font><span class="country"></span><span class="red right">'+_left+money+'</span></p>\
+							<p><span class="desc">'+li.content+'</span><span class="right">'+timeCount.fn(hitime,li.update_time)+'</span></p>\
+						</li>';
+							}
+						}
+					}
+					return html||'<p class="quesheng">暂时没有榜单</p>';
+				}
+			}
+*/
             for(;i<dataLen;i++){
-                type = getD[i].type;
-                hitime=+getD[i].create_timestamp;
+				li = getD[i];
+                type = li.type;
+                hitime=+li.create_timestamp;
+				switch(type){
+					case '104':_left='拆开领走';break
+					case '6':_left='返现';place='投资网信理财';break
+					case '7':_left='返现';place='商城购物';break
+					default:_left='领走了';break
+				}
                 if(type == '7'){
-                    html+='<div class=\"list\"><img src=\"'+ getD[i].headimg+'\">';
+                    html+='<div class=\"list\"><img src=\"'+ li.headimg+'\">';
                     html+='<div class=\"listRight\"><div class=\"listRightCon clearfix\">';
-                    html+='<p class=\"top\"><span>'+ getD[i].nickname +'</span><span>返现'+ getD[i].money +'元</span></p>';
-                    html+='<p class=\"down\"><span>'+ '商城购物' +'</span><span>'+ timeCount.fn(hitime,getD[i].update_time) +'</span></p>';
+                    html+='<p class=\"top\"><span>'+ li.nickname +'</span><span>'+_left+ li.money +'元</span></p>';
+                    html+='<p class=\"down\"><span>'+ place +'</span><span>'+ timeCount.fn(hitime,li.update_time) +'</span></p>';
                     html+='</div></div></div>';
                 }
             }
             domCon.innerHTML = html;
             dom.appendChild(domCon);
+			_load['display']='none';
         };
     }
 
 }
+
 function seturl(_){return HOST.WSQCDN+'/wtopic/jssdk/'+PAGE.token+'_'+_+'.js?cha='+(+new Date);}
 
 
