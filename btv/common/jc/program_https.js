@@ -52,8 +52,9 @@ function toSQ($fun){
 					setStorage("set","err_sq",1+err_sq);
 					if(err_sq<3){						
 						tishi("我们没有获取到您的身份，正在重试..."+$data.errorCode,{fun:function(){
-							setTimeout(function(){					
-								location.replace('http://192.168.28.100/work/btv/')
+							setTimeout(function(){	
+								//location.replace(PAGE.redirect)				
+								location.replace(location.href)
 							},1000)					
 						}})
 					}else{
@@ -73,7 +74,8 @@ function toSQ($fun){
 			if(!!US){
 				if(US.indexOf("?")===0)US=US.substr(1)
 				if(US==="xdClear"){localStorage.clear();
-					location.replace('http://192.168.28.100/work/btv/');
+					//location.replace(PAGE.redirect);
+					location.replace(location.href);
 					return}
 				setStorage("remove","US")
 				mainVar.isShare=getSearch2(US)||{};
