@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+<script type="text/javascript">
+    
+function getSearch(str){
+    var s=decodeURIComponent(str||location.search.substr(1)),o={}
+    if(s.length>2){
+        var fg=s.indexOf("&amp;")>-1?"&amp;":"&",arr=(s!==""&&s.split(fg))||[""],arrL=arr.length-1,i=-1,key=null,v=null,a=null;
+            do{
+                var a=arr[++i].split("=");
+                if(a){
+                        o[a[0]]=a[1]
+                }
+            }while(i<arrL)  
+        }
+        return o            
+    };
+
+var a = getSearch('https://yaotv.qq.com/shake_tv/shaketv_new/zip/8sr40iluno08d4989xb8b4/share.html?type=money')
+
+console.log(a.type);
+
+</script>

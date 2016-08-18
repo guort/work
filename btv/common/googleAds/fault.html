@@ -1,0 +1,59 @@
+<!doctype html><html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta content="email=no" name="format-detection" />
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+</head><body></body></html>
+<script type="text/javascript">
+var href=location.href
+	,search=getSearch()
+	,token=search['token']
+	,channelName=search['channelName']
+	,channelId=search['channelId']
+	,bg=decode(search['bg'])
+	,e=decode(search['e'])
+	,openId=search['openid_id']
+	,paiTimeUnix=search['title_id']
+	,data=decode(search['data'])+'&title='+encode('容错')+"&album_name="+encode('谷歌')
+	,winW=window.innerWidth
+	,winH=window.innerHeight
+	,DO=document
+	,DB=DO.body
+	,pathname=location.pathname
+	,hostname=location.hostname
+	,spli=pathname.split('/common')[0];
+	
+setStyle("*{margin:0;padding:0;list-style:none;border:0;}body{overflow:hidden;}.nowinbox{width:"+winW+"px;height:"+winH+"px;}.nowinmain{width:300px;position:absolute;top:50%;left:50%;-webkit-transform:translateX(-50%) translateY(-50%);z-index:1000;border-radius: 10px;background-color:rgba(255,255,255,.8);max-height:"+(winH-80)+"px}.nowinbox .overImg{width:30%;padding:14px 0 12px 0;display: block;margin: 0 auto;}.nowinbox .overAD{width:100%;margin-top:10px;display:block;}.nowinbox .centerArea{width:76%; padding-bottom:100px}.interWraper .dati{width:100%;}.nowinbox .overBtn{width: 60%;margin: 10px auto 0 auto;box-shadow: 0 2px 0px rgba(0,0,0,0.2);font-size: 1.2em;padding:9px 0;}.framebox{width:300px;height:250px;overflow:hidden;border-radius:0 0 10px 10px;}.nowinbox p{text-align:center;font-size:16px;font-family:'微软雅黑';padding-bottom:5px;color:#ea5c3a;text-shadow: #fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;}.tjimg{display:none;}");
+
+DB.innerHTML='<div class="nowinbox" style="width:'+winW+'px;height:'+winH+'px;top:0;background:url('+bg+') no-repeat;background-size:100% 100%;"><div class="nowinmain"><img src="//'+hostname+spli+'/common/img/noWin_logo.png" class="overImg"><p>'+e+'</p><div class="framebox">'+setIframe({src:"//a-h5.mtq.tvm.cn/yao/common/googleAds/index.html?token="+token+"&channelName="+channelName+"&channelId="+channelId+"&openid_id="+openId+"&title_id="+paiTimeUnix})+'</div></div><img class="tjimg" src='+data+'>'
+
+function decode(e){return decodeURIComponent(e);}
+function encode(e){return encodeURIComponent(e);}
+//取search
+function getSearch(str){
+	var s=str||location.search.substr(1),o={}
+	if(s.length>3){
+		var fg=s.indexOf("&amp;")>-1?"&amp;":"&",arr=(s!==""&&s.split(fg))||[""],arrL=arr.length-1,i=-1,key=null,v=null,a=null;
+		do{
+			var a=arr[++i].split("=");
+			if(a){
+					o[a[0]]=a[1]
+			}
+		}while(i<arrL)	
+	}
+	return o			
+};
+function setStyle(css,_){
+	var sty=DO.createElement("style")
+	sty.setAttribute("type","text/css");
+	sty.styleSheet?sty.styleSheet.cssText=css:sty.innerHTML=css
+	_?_.appendChild(sty):document.documentElement.firstChild.appendChild(sty);
+};
+function setIframe($opt){
+	var d=$opt||{};
+	return '<iframe src="'+d.src+'" frameborder="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" style="pointer-events:auto;margin:-100px 0 0 0;height:600px;width:100%"></iframe>'
+}
+</script>
