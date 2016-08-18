@@ -472,7 +472,7 @@ function getData() {
                     html+='<li>\
 							<img src="'+getHead(li.headimg)+'" onerror="imgErr(this)">\
 							<p><font>'+li.nickname.replace(">","").replace("<","")+'</font><span class="country"></span><span class="red right">'+_left+li.money+'</span></p>\
-							<p><span class="desc">'+li.content.replace(">","").replace("<","")+'</span><span class="right">'+timeCount.fn(hitime,li.update_time)+'</span></p>\
+							<p><span class="desc">'+place.replace(">","").replace("<","")+'</span><span class="right">'+timeCount.fn(hitime,li.update_time)+'</span></p>\
 						</li>';
                 }
             }

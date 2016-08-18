@@ -21,7 +21,7 @@ html,body{height:100%;overflow:hidden;}
 
 .box .list{background:#fff;position:relative;padding:0 0 20px 64px;}
 .box .list li{border-bottom:1px solid #e9e9e9;min-height:70px;box-sizing:border-box;padding:12px 10px 12px 0;position:relative;display:inline-block;width:100%;}
-.box .list li>img{float:left;width:44px;height:44px;border-radius:50%;position:absolute;left:-54px;top:12px;}
+.box .list li>img{float:left;width:44px;height:44px;border-radius:50%;position:absolute;left:-54px;top:5px;}
 .box .list li p{color:#52649a;line-height:22px;}
 .box .list li p:nth-child(2){overflow:hidden;height:22px;display:flex;display:-webkit-flex;}
 .box .list li p:nth-child(3){line-height:18px;}
@@ -125,7 +125,7 @@ html,body{height:100%;overflow:hidden;}
 .box .load2{-webkit-animation:load2 .4s linear;animation:load2 .4s linear;opacity:1;}
 
 
-.listP{
+/*.listP{
     width: 100%;
     height: 100%;
     overflow: scroll;
@@ -192,7 +192,7 @@ html,body{height:100%;overflow:hidden;}
     float: right;
     text-align: right;
     color: #979797;
-}
+}*/
 .clearfix:before,.clearfix:after{
     content: ".";
     line-height: 0;
@@ -205,4 +205,10 @@ html,body{height:100%;overflow:hidden;}
 #cashback .box .list li{
     min-height: 53px;
     padding: 6px 10px 6px 0;
+}
+#cashback .box .list li>img{
+  width: 38px;
+  height: 38px;
+  left:-49px;
+  top: 7px;
 }
