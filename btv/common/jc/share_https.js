@@ -46,7 +46,7 @@ function setPage(){
 	setMenu();
 	setBanner();
 	//CONFIG.shareInfo.link+="?a="+user.nickname+"&b="+user.weixin_avatar_url;
-	initWX(PAGE.token,location);
+	//initWX(PAGE.token,location);
 }
 //设置tab显示
 function setMenu(){
@@ -429,15 +429,15 @@ function cashback() {
     domPheight = domP.offsetHeight;
 
     //滚动加载
-   /* domP.onscroll = function () {
-        var domH = dom.offsetHeight;
-        var sTop = domP.scrollTop;
-        //console.log(domH);
-        if(domH-domPheight-sTop<=0){
-            getData();
-        }
-    };
-*/
+    // domP.onscroll = function () {
+    //     var domH = dom.offsetHeight;
+    //     var sTop = domP.scrollTop;
+    //     //console.log(domH);
+    //     if(domH-domPheight-sTop<=0){
+    //         getData();
+    //     }
+    // };
+
     getData();
     //获取数据，并设置
 function getData() {
@@ -478,7 +478,7 @@ function getData() {
             }
             domCon.className = 'list';
             domCon.id = "listbox"
-            domCon.innerHTML = html;
+            domCon.innerHTML += html;
             domP.appendChild(domCon);
 	        }else{
 	        	DO.getElementById("cashback").innerHTML = '<p class="noData">暂无返现记录</p>';
