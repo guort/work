@@ -1,0 +1,510 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<title>签到</title>
+<style type="text/css">
+html, body{height:100%;width:100%;padding:0;margin:0;background:url(img/bg.jpg) no-repeat;background-size:cover;font-family:微软雅黑;font-size:100%;overflow:hidden}
+.main{position:relative;width:75%;height:100%;}
+.logo{width:500px;-webkit-transform:translate(50px, 40px);display:none;}
+.itemBox{position:absolute;height:100%;width:100%;z-index:1;-webkit-transition:all 600ms ease;}/*overflow:hidden;visible*/
+.pa{position:absolute}
+.pr{position:relative}
+.headWrap{opacity:0; top:50%;left:50%;-webkit-transform:translate3D(-50%,-50%,0);-webkit-transition:all 500ms ease; display: -webkit-box;-webkit-box-orient: horizontal;-webkit-box-pack: center;-webkit-box-align: center;border-radius:50%;}
+.headBox{overflow:hidden;border-radius:50%;top: 0;left:0;right:0;bottom:0;}
+.shadow{-webkit-animation:shadowAnimation 4s ease infinite;}
+.headA,.headB{display:inline-block;-webkit-transition:all 600ms ease;
+/*-webkit-box-reflect:below 0 -webkit-linear-gradient(top,rgba(250,250,250,0),rgba(250,250,250,.0) 30%,rgba(250,250,250,0.3));;*/}
+.maskImg{width:80%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-webkit-transform:translate(-50%,-50%);-webkit-transition:all 500ms ease;}
+.itemC{top:0;left:0;}
+.itemD{top:0;left:0;}
+.itemA{text-align:center;}
+.headA{overflow:hidden; opacity:0;text-align:center;border-radius:50%;}
+.headA img{display:block; box-sizing:border-box;margin:0 auto;}
+.headB{-webkit-transform:translate3D(0,-100%,0) scaleY(-1);opacity:0.20;}
+.mask{position:absolute;top:0;left:0;width:100%;height:100%;background-image:-webkit-gradient(linear, left bottom, left top, color-stop(0.60, rgb(0,0,0)), color-stop(0.75, rgba(0,0,0,0)))}
+.textInfo{margin-top: 20px; position:absolute;color:white;top:50%;left:50%;transform:translate3D(-50%,0,0);-webkit-transform:translate3D(-50%,0,0);}
+.nickName{font-size:70px;font-weight:900;margin-bottom:5px;text-align: center;}
+.nickName span{opacity:0;-webkit-transition: all 400ms ease;}
+.nickName span:last-child{-webkit-transition: none;}
+.txtBox{margin-top: 5px; text-align: center;font-size: 25px;}
+.txtB{position:relative;top:30px;visibility:hidden;-webkit-transition:all 200ms ease;color:rgba(255,255,255,0.00)}
+.rightMain{position:absolute;width:25%;height:100%;top:0px;right:0px;bottom:0;background:rgba(0,0,0,0.3); background-size:100% 100%;-webkit-transform:translate3d(0%,0,0);-webkit-transition:all 300ms ease;overflow:hidden;z-index:1;border-left:1px #fff solid;}
+@-webkit-keyframes shadowAnimation{
+ form{-webkit-box-shadow:0 0 0px #fff;}
+ 50%{-webkit-box-shadow:0 0 40px #fff;}
+ 100%{-webkit-box-shadow:0 0 0px #fff;}
+}
+
+.pCount{height:10%;width:80%;line-height:40px;text-align:right;font-weight:bold;font-size:20px;color:#000;background:#fff;margin-top:20px;padding-right:10%;box-sizing:border-box;border-top-right-radius:20px;border-bottom-right-radius:20px;
+ overflow:hidden; text-overflow:ellipsis;}
+
+.cardBox{width:100%;height:200%;min-height:750px;overflow:hidden;}
+.userCard{padding-left: 10px; overflow:hidden;margin:0px;opacity:0;box-sizing:border-box;-webkit-transition:all 1000ms ease;background-size:100% 100%;float: left;
+width:70%;height:11%;display:flex;display:-webkit-flex;justify-content: space-around;align-items: center;}
+.userImgBox{display:inline-block;border:2px #fff solid;border-radius:50%;overflow:hidden;}
+.userImg{display:block;width:100%;vertical-align:middle;}
+.userInfo{display:inline-block;color:#fff;vertical-align:middle;}
+.userInfo p{margin:0;padding:0;margin:2px;}
+.userName{font-size:30px;}
+.userInfo .time{min-width: 80px;font-size:22px;background:#000;padding:6px 15px;border-radius:20px;margin-top:3px;}
+.time span{color:#d60f0f; margin-right:10px;}
+.leftid{background-size:cover;width:980px;height:600px;position:absolute;/*left:50%;top:100%;margin-left:-380px;margin-top:-250px;*/opacity:0;-webkit-transform:translate3D(-50%, 0%, 0);-webkit-transition:all 300ms ease;}
+.shuru{width:301px;margin:80px auto 0 auto;}
+.huoid{text-align:left;margin:0 auto 10px auto;}
+#activityId{height:30px;width:240px;border:1px #ccc solid;display:inline-block;border-radius:5px 0 0 5px;outline:none;padding-left:10px;vertical-align:middle;}
+#act{background-color:#323131;padding:0px 10px;height:34px;line-height:34px;cursor:pointer;text-decoration:none;border-radius:0 5px 5px 0;color:#fff;display:inline-block;vertical-align:middle;}
+</style>
+</head>
+<body>
+<input type="button" value="测试" id="testInput" style="position:absolute;z-index:10">
+<input type="button" value="屏保" id="testInput2" style="position:absolute;left:100px;z-index:10">
+<input type="button" value="循环" id="testInput3" style="position:absolute;left:200px;z-index:10">
+<!--<img src="img/logo.png" class="logo"/>-->
+<div class="main" id="main"><img src="img/welcome.png" class="maskImg" id="maskImg"/></div>
+<div class="rightMain" id="rightMain">
+<div class="pCount">已有<span class="number" id="uNumber">0</span>位嘉宾签到</div>
+<div id="cardBox" class="cardBox"></div></div>
+<script src="jc/socket.io.min2.js"></script>
+<script type="text/javascript" src="jc/zepto.min.js"></script>
+<!-- <script type="text/javascript" src="jc/xdDialog.js"></script> -->
+<script type="text/javascript">
+onload=function(){
+    // 欢迎您参加2015亚布力中国企业家论坛第十五届年会
+var QDarguments={word:"欢迎2016里约奥运会中国游泳队员" //欢迎词
+,round:""
+//,socketHost:"http://card.cefco.cn"
+//,socketHost:"http://wall.mtq.tvm.cn"
+,socketHost:"http://yaotv.mtq.tvm.cn"
+//,socketHost:'http://'+ window.location.host
+,pbTimer:10 //显示屏保的时间
+,createBox:function(data){//生成签到卡片内容
+		leftid=CE("leftid")
+		itemBox=CE("pa itemBox")
+		itemA=CE("pr headBox itemA");				
+		headWrap=CE("pa headWrap shadow");
+		headA=CE("headA");		
+		itemC=CE("pa headBox itemC");
+		itemD=CE("pa headBox itemD");
+		textInfo=CE("textInfo");
+		nickName=CE("nickName");
+		txtBox=CE("txtBox");
+		svg=document.createElementNS('http://www.w3.org/2000/svg',"svg");
+		main.appendChild(itemBox);
+		itemBox.appendChild(leftid);
+		itemBox.appendChild(headWrap);
+		headWrap.appendChild(itemD);
+		headWrap.appendChild(itemA);
+		itemA.appendChild(headA);
+		headWrap.appendChild(itemC);	
+		itemC.appendChild(svg);
+		itemBox.appendChild(textInfo);		
+		textInfo.appendChild(nickName);		
+		textInfo.appendChild(txtBox);					
+		headA.innerHTML='<img src="'+data.headImg.replace(/96$/,"0")+'" class="head" id="head"/>';
+        //图片大小
+         addRules("#head","width:"+mainW*0.2+"px",30);
+
+		var d=new Date(),h=d.getHours(),m=d.getMinutes();	
+			data.addTime=getD(h)+":"+getD(m);				
+		setTimeout(function(){
+			left(data);
+			setTimeout(function(){headAnimation(data)},100)		
+		},100)		
+	}
+}
+	var headWrap,itemA,itemB,itemC,itemD,headA,headB,headC,headD,itemBox,svg,textInfo,nickName,txtBox,userData=[],oldData,runTime=1,userCount=0,maskShow=1,firstRun=1;
+	var mainW=main.offsetWidth,mainH=main.offsetHeight,boxRadius=220,borderWidth=6,borderMargin=4,w=boxRadius-(borderWidth+borderMargin)*2,pbTime=0,pbCount=30,cardMoveRun=0,pCount = document.querySelector('.pCount'),pCountH = pCount.offsetHeight,cardBoxWidth = cardBox.offsetWidth;
+   
+	addRules(".headWrap","width:"+mainW*0.21+"px;height:"+mainW*0.21+"px",30);
+	//addRules(".itemBox","-webkit-transform:translate3D("+((mainW-12)>>1)+"px,"+(mainH+20>>1)+"px,0)",30);
+	addRules(".headBox","width:"+mainW*0.2+"px;height:"+mainW*0.2+"px",30);
+	//addRules(".headA","border:"+borderWidth+"px solid #fff;",30);	
+	//addRules(".head","margin:8px 0 0 -5px;",30);
+    addRules(".headA","width:"+mainW*0.2+"px;height:"+mainW*0.2+"px",30);
+
+    addRules(".pCount","line-height:"+pCountH+"px;font-size:"+ pCountH/3+"px",30);
+   
+    //------------add by rubinus---------
+    var socket = io.connect(QDarguments.socketHost+'/scanEvent_common');
+    socket.on('isConn', function (data) {
+        if (data.hello === 'world') {
+			//console.log(data);
+            //先从接口取二维码
+            var browserId = data.browserId; //必选参数  
+        }
+    });
+	
+	 $('#act').on('click',function(){
+          var activity = activityId.value;
+          $.ajax({
+             url:QDarguments.socketHost+'/interface/getAct',
+             type:"get",
+             data:{"activityId":activity},
+             success:function(data){
+                  // console.log(data);
+                  // console.log(data.wx_token);
+                  socket.emit('act_data',data);
+				  self.xdDialog.close();
+             }
+          });
+      });
+		
+    socket.on('scanEvent_common', function (chunk) {
+        if (chunk && chunk.status === 'ok'){
+			console.log(chunk);
+            userData.push(chunk.data);			
+        }
+    });
+    //------------add by rubinus---------
+
+	
+	function CE(className){
+		var ele=document.createElement("div");
+		ele.className=className;
+		return ele
+		}
+	function left(){leftid.style.cssText="opacity:1;-webkit-transform:translate3D(-50%, -40%, 0);";};
+	function headAnimation(data){
+		headA.style.cssText="opacity:1;-webkit-transform:translate3D(0,0%,0)";
+		setTimeout(function(){			
+				//headWrap.style.cssText="background:url(img/tx_bg3.png) no-repeat 0 center;background-size:cover;";
+                headWrap.style.opacity = "1";
+				headWrap.style.webkitTransform="translate3D(-50%,-100%,0)";
+				$(".headWrap").css("border","2px #fff solid");
+				setTimeout(function(){
+				//headWrap.style.background="url(img/tx_bg3.png) no-repeat 0 center";
+				//headWrap.style.backgroundSize="cover";
+				textAnimation1(data)
+				},500)
+			},300)
+		}
+		
+	//昵称动画	
+	function textAnimation1(data){
+		var txt=data.nickName,tl=txt.length
+			,html=txt.replace(/(.)/g,"<span>$1</span>")
+			,timer,i=0,childs,_=document.createElement("span");	
+			nickName.innerHTML=html,
+            span = nickName.firstElementChild||nickName.firstChild;
+			_.style.cssText="opacity:0;display:inline;position:absolute;left:0px";
+			_.innerHTML="_";
+            nickName.style.fontSize = mainW/1200*70+'px';
+            spanW = span.offsetWidth;
+			nickName.appendChild(_);
+			childs=nickName.children;
+			timer=setInterval(function(){				
+				if(i<tl){
+					var eSty=childs[i].style;
+					//console.log(childs[i]);
+					eSty.display="inline-block";
+                     _.style.opacity="1";
+					setTimeout(function(){
+                        eSty.opacity="1";
+                        _.style.left = spanW*i+'px';
+                    },10);
+					i++
+					}else{
+
+						clearInterval(timer);
+						textAnimation2(data);
+						_.style.opacity="0"				
+						}
+				},350)	
+			}
+	//欢迎词动画		
+	function textAnimation2(data){
+		var txt=QDarguments.word
+			,tl=txt.length
+			,html=txt.replace(/(.)/g,"<span class='txtB'>$1</span>")
+			,timer,i=0,childs;
+			txtBox.innerHTML=html;
+			childs=txtBox.children;
+            addRules(".txtBox","font-size:"+ mainW/1200*25 +"px",30);
+			timer=setInterval(function(){
+				if(i<tl){
+					childs[i].style.cssText="top:0;color:rgba(255,255,255,1.00);visibility:visible";
+					i++
+					}else{						
+						clearInterval(timer);
+						//itemD.classList.add("shadow");
+						//$(".headWrap").css("border","2px #fff solid");
+						oldData=data;
+						uNumber.innerHTML=++userCount;
+						runTime=1
+					}
+				},50)	
+			}
+			
+var data={nickName:"傅园慧",headImg:"./img/fyh.jpg"}			
+testInput.onclick=function(){
+	userData.push(data)
+	}
+testInput2.onclick=function(){
+	hiddMain()
+	}	
+testInput3.onclick=function(){
+	xun()
+	}					
+function addCard(data){
+	var userCard=CE("userCard"),userCardW,userCardH,userName,time; 
+	insetHTML(userCard)
+	userCard.innerHTML='<article class="userImgBox"><img class="userImg" src="'+data.headImg.replace(/96$/,"0")+'"/></article>'
+	+'<article class="userInfo">'
+    +'<p class="userName">'+data.nickName+'</p>'
+    +'<p class="time"><span>'+data.addTime+'</span>已签到</p>'
+    +'</article>';
+    userCardW =userCard.offsetWidth;
+    userCardH ==userCard.offsetHeight;
+    addRules(".userImgBox","width:"+userCardW*0.25+"px;height:"+userCardW*0.25+"px",30);
+    userName = userCard.querySelector('.userName');
+    time = userCard.querySelector('.time');
+    userName.style.fontSize = userCardW/360*30 +"px";
+    time.style.fontSize = userCardW/360*22 +"px";
+	return userCard
+	}
+	
+function cardScroll(ite){
+	if(!ite)return false;
+	//console.log(mainW);
+	ite.style.cssText="opacity:0;-webkit-transform:translate3d("+(mainW/2+cardBoxWidth/5)+"px,"+ (-mainH/3) +"px,0) scale(0.2);z-index:100;";
+		var ele=addCard(oldData);
+		setTimeout(function(){
+			cardMove(ele,function(){
+                //移动之后删除元素
+				//main.removeChild(ite)
+				})
+		},300)
+	};
+	
+function getData(data){
+	pbTime=0;//屏保计时清零
+	runTime=0;	
+	if(maskShow){
+		showMain(data)//显示主体界面
+		}else{
+		mainMove(data);//
+		}
+	};
+	
+function hiddMain(){console.log("hidd")
+	maskShow=1;	
+	//cardScroll(leftid);// 移动隐藏
+	cardScroll(itemBox);//移动
+	setTimeout(function(){	
+		maskImg.style.opacity="1";
+		leftid=null;
+		//rightMain.style.cssText="-webkit-transform:translate3d(100%,0,0)"		
+	},600)
+}
+//隐藏屏保	显示签到
+function showMain($data){	
+	maskShow=0;
+	maskImg.style.opacity="0";
+	rightMain.style.cssText="-webkit-transform:translate3d(0,0,0);";
+	createCard($data)
+	}
+//创建卡片	
+function createCard($data){
+	setTimeout(function(){
+		QDarguments.createBox($data);
+		},100);	
+	}
+		
+// 卡片的移动	
+function cardMove(ele,fun){
+	cardBox.style.cssText="-webkit-transform:translate3D(0,0,0);-webkit-transition:all 1000ms ease"	
+	setTimeout(function(){		
+		ele.style.opacity=1;
+		typeof(fun)==="function" && fun()
+		},400)	
+	setTimeout(function(){cardMoveRun=1},3000)		
+	}
+	
+// 插入到顶部	
+function insetHTML(ele){
+    var userCardH =cardBox.offsetHeight*0.11;
+	//ele.style.opacity=0
+	cardBox.insertAdjacentElement("afterBegin",ele);
+
+	cardBox.style.cssText="-webkit-transform:translate3D(0,-"+ userCardH +"px,0)";	
+	}	
+//循环	
+function xun(){	
+	if(pbTime>QDarguments.pbTimer){
+		//console.log("计时完成",cardMoveRun)
+		//if(!maskShow)hiddMain();
+		pinbao();
+	}
+}
+//屏保显示
+function pinbao(){
+		if(cardBox.scrollHeight>cardBox.offsetHeight&&cardMoveRun){
+			console.log("开始屏保",pbTime)
+			cardMoveRun=0;
+			var ele=cardBox.lastChild;
+			insetHTML(ele);
+			setTimeout(function(){cardMove(ele);},0)			
+		}	
+	}	
+//右侧卡片移动				
+function mainMove($data){
+	//cardScroll(leftid);//移动
+	cardScroll(itemBox);//移动
+	createCard($data)
+	}
+//		
+setInterval(function(){	
+	if(userData.length>0){			
+			runTime&&getData(userData.shift());
+		}else{
+			pbTime++;	
+			xun();
+		}
+	},1000)
+	
+	function addRules(name,css,index){
+		var rule=document.styleSheets[0]
+		if(rule.addRule)
+			rule.addRule(name,css,index);
+			else
+			rule.insertRule(name+"{"+css+"}",index)
+	}
+	function getD(num){
+		var str=num
+		if(+num<10)str="0"+num
+		return str
+	}		
+	function drawDoughnut(endFun){
+    var obj=itemC,
+      W = obj.offsetWidth,
+      H = obj.offsetHeight,
+      centerX= W/2,
+      centerY= H/2,
+      cos = Math.cos,
+      sin = Math.sin,
+      PI=Math.PI,
+	  roundColor="#fff",
+      settings ={
+        segmentShowStroke :true,
+        segmentStrokeColor:"#0C1013",
+        segmentStrokeWidth :2,
+        baseColor:"rgba(0,0,0,0.5)",
+        baseOffset:0,
+        edgeOffset:0,//offset from edge of $this
+        percentageInnerCutout:75,
+        animation :true,
+        animationSteps:60,
+        animationEasing :"easeInOutExpo",
+        animateRotate :true,
+        afterDrawed:endFun
+      },
+	  animationOptions ={
+        linear :function (t){
+          return t;
+        },
+        easeInOutExpo:function (t){
+          var v = t<.5 ? 8*t*t*t*t :1-8*(--t)*t*t*t;
+          return (v>1) ? 1 :v;
+        }
+      },		
+	    $svg=svg,
+        $paths=[],
+        easingFunction =animationOptions[settings.animationEasing],
+        cutoutRadius =Min([H/2,W/2])-settings.edgeOffset, //doughnutRadius*(settings.percentageInnerCutout / 100),
+        doughnutRadius =cutoutRadius-5,// Min([H / 2,W / 2]) - settings.edgeOffset,
+        segmentTotal = 0,
+		  requestAnimFrame=function(){
+			return window.requestAnimationFrame ||
+			  window.webkitRequestAnimationFrame ||
+			  function(callback){
+				window.setTimeout(callback,1000/100);
+			  };
+      }();
+	$svg.width=W
+	$svg.height=H;
+	$svg.setAttribute("viewBox","0 0 "+W+" "+H);
+	var i=0,len=2,p;
+    for (;i<len;i++){
+		 segmentTotal+=1;
+		 $paths[i]=document.createElementNS('http://www.w3.org/2000/svg','path');
+		 //$paths[i]=document.createElement("path")	 
+		 p=$paths[i];   
+         p.setAttribute("fill",roundColor);       
+         $svg.appendChild(p)
+    }
+
+    function drawPieSegments (animationDecimal){
+      var startRadius=-PI / 2,
+          rotateAnimation = 1;
+      if (settings.animation && settings.animateRotate) rotateAnimation = animationDecimal;
+      for (i=0;i<len;i++){
+        var segmentAngle = rotateAnimation*((1 /segmentTotal) * (PI*2)),
+            endRadius = startRadius + segmentAngle,
+            largeArc = ((endRadius - startRadius) % (PI*2))>PI ? 1 :0,
+            startX = centerX + cos(startRadius) * doughnutRadius,
+            startY = centerY + sin(startRadius) * doughnutRadius,			
+            endX2 = centerX + cos(startRadius) * cutoutRadius,			
+            endY2 = centerY + sin(startRadius) * cutoutRadius,			
+            endX = centerX + cos(endRadius) * doughnutRadius,
+            endY = centerY + sin(endRadius) * doughnutRadius,			
+            startX2 = centerX + cos(endRadius) * cutoutRadius,
+            startY2 = centerY + sin(endRadius) * cutoutRadius;
+        var cmd = [
+          'M', startX, startY,
+          'A', doughnutRadius, doughnutRadius, 0, largeArc, 1, endX, endY,
+          'L', startX2,startY2,
+          'A', cutoutRadius, cutoutRadius, 0, largeArc, 0, endX2, endY2,
+          'Z'//Cloth path
+        ];
+		var d=cmd.join(' ');
+        $paths[i].setAttribute("d",d);
+        startRadius +=segmentAngle;
+      }
+    }
+    function animateFrame(cnt){
+      var easeAdjustedAnimationPercent=(settings.animation)?CapValue(easingFunction(cnt),null,0):1;	  
+      drawPieSegments(easeAdjustedAnimationPercent);
+    }
+    function Max(arr){return Math.max.apply(null, arr);}
+    function Min(arr){return Math.min.apply(null, arr);}
+    function isNumber(n){return !isNaN(parseFloat(n)) && isFinite(n);}
+    function CapValue(valueToCap, maxValue, minValue){
+      if (isNumber(maxValue) && valueToCap > maxValue) return maxValue;
+      if (isNumber(minValue) && valueToCap < minValue) return minValue;
+      return valueToCap;
+    };
+   (function(){
+      var animFrameAmount = (settings.animation)? 1 / CapValue(settings.animationSteps, Number.MAX_VALUE,1):1,
+          cnt =(settings.animation)? 0 :1;
+		  (function action(){
+          cnt+=animFrameAmount;
+          animateFrame(cnt);
+          if(cnt<=1){
+            time=requestAnimFrame(action);
+          }else{
+			  settings.afterDrawed()
+			  cancelAnimationFrame(time)
+          }
+      }())	  
+    }());	  
+  };
+function setStyle(css){
+	var sty=document.createElement("style");
+	sty.setAttribute("type","text/css");
+	sty.styleSheet?sty.styleSheet.cssText=css:sty.innerHTML=css;
+	document.documentElement.firstChild.appendChild(sty)
+	}  
+}
+
+//输入活动id
+var frmUrl = "<div class='shuru'><p class='huoid'>请输入活动ID号：</p><input name='activityId' id='activityId' type='text'/><a href='#' id='act'>提交</a></div>";
+self.xdDialog.open({
+		html:frmUrl,
+		style:"width:600px;height:300px;overflow:hidden;text-align:center;",
+		title:""			
+})
+
+</script>
+</body></html>

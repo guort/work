@@ -1,0 +1,29 @@
+var HOST={
+    AD:null
+    ,API:"http://a-count.yaotv.tvm.cn"
+    ,APICDN:"http://q.cdn.mtq.tvm.cn"
+    ,CJ:"http://a.cj.yaotv.tvm.cn"
+    ,DSP:"http://api.dsp.tvm.cn"
+    ,DOMAIN:"http://a.pmall.yaotv.tvm.cn"
+    //,JBDH:"http://q.cdn.yaotv.tvm.cn/adsmall/mobile/views/"
+    ,HJGY:"http://a.dzp.yaotv.tvm.cn"	
+    ,JBDH:"http://q.cdn.mtq.tvm.cn/adsmall/alimobile/views/"
+    ,MALL:"http://a.mall.yaotv.tvm.cn"
+    ,MB:'http://mb.mtq.tvm.cn'
+    ,NEWAPI:"http://a.scene.yaotv.tvm.cn"
+    ,QQAPI:"http://yaotv.qq.com/shake_tv/include/js/jsapi.js"
+    ,RESOURCE:"http://a.h5.mtq.tvm.cn/yao/common/"
+    ,SJYZ:"http://120.55.196.30"
+    ,SOCKET:"a-socket.yaotv.tvm.cn"
+    ,TJ:"http://ana.mtq.tvm.cn"
+    //,WSQ:"http://ws.wsq.mtq.tvm.cn"
+    //,TJ:"http://ana.yaotv.tvm.cn"
+    ,WSQ:"http://a.cdn.yaotv.tvm.cn"
+    ,WSQCDN:"http://a.cdn.yaotv.tvm.cn"
+    ,WSQDZP:"http://a.dzp.yaotv.tvm.cn"
+	,WSQTURN:"http://a.dzp.yaotv.tvm.cn"
+    ,WXAPI:"http://res.wx.qq.com/open/js/jweixin-1.0.0.js"
+    ,YAO:"http://a.yaotv.tvm.cn"
+    ,CARD:"http://a.pmall.yaotv.tvm.cn"
+}
+//阿里卫视

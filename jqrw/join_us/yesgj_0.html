@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-touch-fullscreen" content="YES">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<style>
+		html{background: #fff2cc;}
+		body{margin:0;padding:0;height:100%;font-size:1em;font-family:Helvetica;}
+		a{text-decoration: none; }
+		.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+		.clearfix{display:block}
+		.clear{clear:both;overflow:hidden;_zoom:1;}
+		i{font-style:normal;}
+img{display:block;margin:0;width:100%}
+	</style>
+</head>
+<body>
+<img src="img/card_top.jpg"/>
+<img src="img/card_bottom.jpg"/>
+<script src="//a-h5.mtq.tvm.cn/yao/common/jc/xdTools-1.0.js"></script>
+<script>
+var DO=document,DB=DO.body,win=window,winW=win.innerWidth,winH=win.innerHeight,isTouch=('ontouchstart' in window);
+;
+(function(){
+var HOST={
+	RTS:"//qarts-opa.yaotv.tvm.cn"
+	,MB:"//qa.mb.mtq.tvm.cn"
+	,SMS:"//qa-sms.yaotv.tvm.cn"
+	,token:"33580c57d3c86f07"
+	,TJ:"//ana.mtq.tvm.cn"
+},search=getSearch()
+,_yyyid=search.yyyid
+,_yoid=search.yoid
+,_ysig=search.ysig
+,_ysige=search.ysige
+,_openid=search.openid
+,_phone=+search.phone
+,_sig=search.sig
+,_channelId=search.channel_id
+,_nickName=search.user_name
+,_sex=search.sex
+,_token=search.token
+;	
+function binding(){
+	var arg={
+		yopenid:_yoid
+		,yyyappid:_yyyid
+		,yaoSig:_ysig
+		,sigExpire:_ysige
+		,wopenid:_openid
+		,wxSig:_sig
+	}
+	var a=setAjax("get",HOST.RTS+"/check/bind?"+jsonJoin(arg))
+		a.callBack=function($data){
+			var data=toObject($data);
+			console.log(data)
+			}
+		a.send()
+	}
+function toSQ(){
+	location.href=getAccess()
+	}
+if(!_openid)toSQ()
+else binding()
+function getAccess(){
+		return HOST.MB+"/oauth?wx_token="+HOST.token+"&redirecturl="+encodeURIComponent(location.href)
+	}
+wxShare({
+		token:HOST.token,
+		resources:location.href,
+		ico:"http://a-h5.mtq.tvm.cn/yao/common/img/defshare.jpg",
+		title:"摇一摇，爽一夏",
+		desc:"小伙伴们，快来参加摇一摇吧",
+		link:localStorage.getItem("referrerURL")
+		,strFun:function(wx){wx.hideOptionMenu()}
+		})	
+function getPage($s){
+	var s=$s||location.href,w=s.indexOf("?")
+	return w>1?s.substring(0,w):s
+	}
+	
+function TJ(){
+	var data='id=555eacab75188098ad000001'
+		+'&sex='+_sex
+		+'&user_name='+_nickName
+		+'&open_id='+_openid
+		+'&token='+_token
+		+"&channel_id="+_channelId
+		+'&event_code=100000'
+		+"&page=余额收割机"
+		+"&title=余额收割机注册页面"
+		+"&refer_code=来源互动页";
+		createNode(DB,"img",{src:HOST.TJ+"/ana?"+data+"&ch="+Math.random(),style:"display:none"},"p3")
+	}
+TJ();		
+}())
+</script>
+</body></html>

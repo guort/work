@@ -1,0 +1,38 @@
+var DO=document
+	,search=getSearch()
+	,cb41faa22e731e9b=search['cb41faa22e731e9b']||""
+	,sprflag=search['sprflag']||""
+	,live_id=search['live_id']||""	
+	,theFolder=null
+	,theUS=null
+	,href=location.href
+	,DB=DO.body
+	,winW=window.innerWidth
+	,winH=window.innerHeight
+	,tjData={}
+	,chartLen=40
+	,gameTime=0
+	,gameTime_over=0
+	,gameTime_begin=0
+	,gameTime_next=0
+	,canPlay=1
+	,danmuObj
+	,thePlay=""
+	,channelInfo
+	,media
+	,runTime=0
+	,hongbao=0
+	,sqTime=0
+	,indexNum=0
+	,fujia=0
+	,joinHudong=0
+	,activityType=0
+    ,sigCode="61d81fabe7d6d2dc5357e04da16aafem"
+	,Verifs,newWins,lingjiang,popBox,nu=1,$nu=2,tjHjgy=0,modules,instance,InterTC;
+mainVar.bird=bird();
+mainVar.bird.opening();
+toSQ(function(){createMain({fun:getModule,err:function(){
+			getModule({type:"error"});
+			tishi('found_code_001',{time:3000});
+			}})})
+addEvent(DO,"touchstart",docAction);

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta content="email=no" name="format-detection" />
+	<meta name="apple-touch-fullscreen" content="YES">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<style type="text/css">
+		.prompt{
+			margin:0 auto;
+			width:100%;
+			height:100%;
+			background:rgba(0,0,0,0.4);
+			display:table;
+			position:fixed;
+			top:0%;
+			right:0;
+			left:0;
+		}
+		.p_cell{
+			display:table-cell;
+			vertical-align:middle;
+		}
+		.p_inner{
+			margin:0 auto;
+			width:80%;
+			background:#fff;
+			position:relative;
+		}
+		.p_title{
+			padding:10px;
+			background:#fdf6d8;
+    		color:#ad6819;
+    		text-align:center;
+		}
+		.p_content{
+			padding:10px;
+		}
+		.p_btns{width:100%;display:flex;display:-webkit-flex;}
+		.p_btns b{padding:10px 0;flex:1;-webkit-flex:1;text-align:center;}
+		.p_btn_cancel{background:#ccc;color:#535353;}
+		.p_btn_ok{background:#06b011;color:#fff;}
+		.p_close{width:20px;height:20px;background:url(img/close.png) no-repeat center center /100%;position:absolute;top:10px;right:5px;}
+		.scaleIn {
+		  -webkit-animation: scaleIn 0.4s;
+		  animation: scaleIn 0.4s;
+		}
+		@-webkit-keyframes scaleIn {
+		  0% {
+		    opacity: 0;
+		    -webkit-transform: scale(.2);
+		    transform: scale(.2);
+		  }
+		  90% {
+		  	 -webkit-transform: scale(1.1);
+		    -ms-transform: scale(1.1);
+		    transform: scale(1.1);
+		    opacity: 1;
+		  }
+		  100% {
+		  	 -webkit-transform: scale(1);
+		    -ms-transform: scale(1);
+		    transform: scale(1);
+		    opacity: 1;
+		  }
+		}
+		@keyframes scaleIn {
+		   0% {
+		    opacity: 0;
+		    -webkit-transform: scale(.2);
+		    transform: scale(.2);
+		  }
+		  90% {
+		  	 -webkit-transform: scale(1.1);
+		    -ms-transform: scale(1.1);
+		    transform: scale(1.1);
+		    opacity: 1;
+		  }
+		  100% {
+		  	 -webkit-transform: scale(1);
+		    -ms-transform: scale(1);
+		    transform: scale(1);
+		    opacity: 1;
+		  }
+		}
+	</style>
+</head>
+<link href="http://qa-h5.mtq.tvm.cn/yao/common/jc/home.css" rel="stylesheet" type="text/css">
+<body>
+<script src="//qa-h5.mtq.tvm.cn/yao/common/jc/config_https.js"></script>
+<script src="//qa-h5.mtq.tvm.cn/yao/common/jc/program_https.js"></script>
+<script src="//a-h5.mtq.tvm.cn/yao/common/jc/xdTools-1.0.js"></script>
+<script>
+var DO=document,DB=DO.body
+,search=getSearch()
+,host="//qa-h5.mtq.tvm.cn/yao/join_us/"
+,config={ttopenid:search.openid
+,yyyappid:search.yyyid
+,yoid:search.yoid
+,nickname:search.nickname
+,weixin_avatar_url:search.headImg
+,openid:search.yoid
+,redirect:search.redirect
+}
+setJsonp(host+"register.js",function(){
+		register({
+			box:createNode(document.body,"div",{style:"background:#F1F1F1"}),
+			openid:config.ttopenid,
+			yyyid:config.yyyappid,
+			yoid:config.yoid,
+			headImg:config.weixin_avatar_url,
+			nickname:decodeURIComponent(config.nickname),
+			zIndex:0,
+			change:function(){
+				if(config.redirect)location.href=decodeURIComponent(config.redirect)
+				else location.reload()
+			}
+		})
+	})
+</script>
+</body></html>

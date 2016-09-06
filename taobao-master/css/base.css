@@ -1,0 +1,62 @@
+
+*,
+::before,
+::after{
+    padding: 0;
+    margin: 0;
+
+    /*点击高亮效果*/
+    -webkit-tap-highlight-color:transparent;/*清除点击高亮效果*/
+
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 14px;
+    font-family:"MicroSoft YaHei",sans-serif;
+    color: #333;
+}
+
+ol,ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+a:hover{
+    color: #333;
+}
+
+input{
+    border: none;
+    outline: none;
+    /*在移动端清除浏览器默认样式*/
+    -webkit-appearance: none;
+}
+img{
+    display:block;
+}
+
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix::after,
+.clearfix::before{
+    content: ".";
+    line-height: 0;
+    height: 0;
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+[class^="icon_"]{
+    background: url("../images/sprites.png") no-repeat;
+    background-size: 2rem 2rem;
+}

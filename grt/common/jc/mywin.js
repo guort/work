@@ -1,0 +1,1 @@
+createJS([PAGE.COMMON+"jc/mywin_https.js"])

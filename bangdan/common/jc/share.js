@@ -1,0 +1,1 @@
+createJS(["common/jc/xdTools-1.0.js","common/jc/share_https.js","common/jc/program_https.js"])
