@@ -1,0 +1,39 @@
+<!doctype html><html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+<meta content="email=no" name="format-detection" />
+<meta name="apple-touch-fullscreen" content="YES">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style type="text/css">
+html,body{margin:0;padding:0;width:100%;height:100%}
+body{font:14px weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;background-size:100% auto}
+</style>
+<script src="http://q.cdn.mtq.tvm.cn/adsmall/release/guan-ads.js"></script>
+<script src="//qa-h5.mtq.tvm.cn/yao/common/jc/xdTools-1.0.js"></script>
+</head><body>
+<div id="tvmad"></div>
+<script>
+	var request=getSearch()||{}
+	,locationObj=request.location||{}
+	,area=locationObj.region||'中国-北京市-北京市-东城区'
+	,el=document.getElementById("tvmad")
+	,options={
+		tag:'',
+		columnid:'',
+		activeid:'',
+		openid:request.openid||'',
+		nickname:request.nickname||'',
+		sex:request.sex||1,
+		area:area,
+		gps:locationObj.gps,
+		errorBack:function(){
+		},
+		params:'channelmid%3d1782%26did%3d110101%26tcat_title%3dfinance'
+	}
+	,istest=false
+	,ratio=0.4;
+	tvmads.inject(el,options,istest,ratio);
+</script>
+</body></html>
