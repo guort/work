@@ -1,0 +1,100 @@
+html,body{margin:0;padding:0;}
+body{font:14px weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;}
+ul,ul li,ol,ol li,dl,dl dd,p{ list-style:none;margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,strong{margin:0;padding:0;font-style:normal;}
+/*tab*/
+.navBar{width:100%;height:40px;position:relative;z-index:10;background-color:#f9f9f9;}
+.navBarList{height:100%;display:-webkit-flex;display:flex;}
+.liNavBar{flex:1;-webkit-flex:1;display:inline-block;height:100%;text-align: center;color:#888;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+.navBarList li span{font-size:13px;line-height:40px;}
+.active{color:#000;border-bottom:3px solid #f5b43d;}
+::-webkit-scrollbar{display:none;}
+/*今日红包排名&&累计红包排名*/
+.bg{width:100%;height:100%;box-sizing:border-box;-webkit-box-sizing:border-box;background-image:url(./img/jrBJ.jpg);background-size:100% 100%;position:absolute;top:0;left:0;padding-top:43px;}
+.tab{height:40px;background-color:#a7a4a4;z-index:999;position:relative;}
+.title{width:225px;height:55px;background-size:100% 100%;margin:0 auto;position:relative;text-align:center;}
+.title span{white-space:nowrap;color:#fff;position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);-webkit-transform:translateX(-50%);font-size:12px;}
+.BD{min-height:170px;position:relative;top:42px;padding:5px 15px 0 15px;max-width:500px;}
+.top3{width:100%;height:300px;top:-44px;}
+.topList{width:100%;height:160px;position:relative;z-index:10;border-bottom:1px solid #d9d9d9;}
+.topList li{width:33.33%;height:100%;display:inline-block;position:relative;top:0;text-align:center;background-size:100% 100%;padding-top:42px;}
+.topList li:nth-child(1){left:33.33%;background-image:url(./img/middle.png);}
+.topList li:nth-child(2){left:-33.33%;background-image:url(./img/left.png);}
+.topList li:nth-child(3){right:0;background-image:url(./img/right.png);}
+.topList li .headImg{width:45px;height:45px;border-radius:50%;display:block;margin:0 auto;margin-bottom:6px;background-size:100% 100%;}
+.topList li span{display:block;width:90%;max-width:90%;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0 auto;}
+.topList li:nth-child(1) .headImg{-webkit-transform:scale(1.2);transform:scale(1.2);-webkit-transform-origin:bottom;transform-origin:bottom;}
+.topList li .name{height:19px;line-height:19px;font-size:14px;color:#747474;}
+.topList li .addr{height:14px;line-height:14px;font-size:12px;color:#8b8b8b;}
+.topList li .money{height:35px;line-height:35px;font-size:14px;color:#454455;font-weight:700;}
+.topList li img{width:27px;height:33px;position:absolute;top:6px;left:50%;margin-left:-13.5px;}
+.topList li:nth-child(1) img{top:-20px;}
+.topList li:nth-child(1) .money{color:#f65138;}
+.list{width:100%;position:relative;z-index:10;background-color:#fff;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.list li{width:100%;border-bottom:1px solid #d9d9d9;display:flex;display:-webkit-flex;padding:10px 0;}
+.list span{display:inline-block;width:60px;height:100%;text-align:center;font-size:16px;line-height:45px;color:#9e9e9e;vertical-align:top;}
+.list .headImg{width:45px;height:45px;display:inline-block;border-radius:50%;background-size:100% 100%;}
+.list .count{flex:1;-webkit-flex:1;padding-left:8px;display:inline-block;vertical-align:top;}
+.list .count p{display:block;height:50%;font-size:13px;line-height:22.5px;color:#747474;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:top;}
+.list .count p:nth-child(2){color:#8b8b8b;}
+.list b{display:inline-block;height:100%;line-height:45px;padding-right:20px;max-width:110px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;float:right;}
+
+/*收到的红包*/
+.fcHB{overflow:hidden;}
+.tb{width:100%;height:216px;background-color:#dadad9;overflow:hidden;}
+.tb2{width:95%;height:200px;background-size:100% 100%;background-image:url(./img/tbBJ.jpg);margin:8px auto;border-radius:5px;position:relative;}
+.tb2 .tbTitle{width:100%;position:absolute;padding-top:8px;}
+.tb2 .tbTitle b{font-size:17px;color:#8cfff6;}
+.tb2 .tbTitle .left{margin-left:8px;}
+.tb2 .tbTitle .num{margin-right:8px;float:right;}
+.tubiao{width:100%;height:100%;}
+.bangdan{width:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+.bangdan .fclist{text-align:center;}
+.bangdan .fclist li{padding:10px 15px; background-color:#fff;border-bottom: 1px solid #d9d9d9;display:flex;display:-webkit-flex;}
+.bangdan .fclist li .headImg{width:45px;height:45px;border-radius:50%;background-color:#ccc;background-size:100% 100%;margin-right:5px;}
+.bangdan .fclist li .right{flex:1;-webkit-flex:1;}
+.bangdan .fclist li .right p{width:100%;height:50%;display:flex;display:-webkit-flex;}
+.bangdan .fclist li span{display:inline-block;height:100%;line-height:22px;font-size:12px;color:#747474;white-space:nowrap;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;vertical-align:top;}
+.bangdan .fclist li span.red{color:#454455;font-size:13px;}
+.bangdan .fclist li span.red span{color:#fa0415;font-size:13px;}
+.bangdan .fclist li span.time{color:#808080;}
+.bangdan .fclist li span.name,.bangdan .fclist li span.addr{flex:1;-webkit-flex:1;overflow:hidden;}
+.bangdan .fclist li span.red,.bangdan .fclist li span.time{
+    max-width:144px;
+}
+.bangdan .fclist li span b{display:block;font-weight:400;max-width:130px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left;}
+/*默认基于 iphone6，屏幕尺寸：375X667*/
+@media screen and (max-width:320px){
+    .list .count p{max-width:70px;}
+    .navBarList li span{font-size: 12px;}
+    .bangdan .fclist li span b{max-width:80px;}
+}
+@media screen and (min-width:360px){
+    .list .count p{max-width:100px;}
+    .bangdan .fclist li span b{max-width:110px;}
+}
+@media screen and (min-width:375px){
+    .list .count p{max-width:120px;}
+    .bangdan .fclist li span b{max-width:132px;}
+}
+@media screen and (min-width:414px){
+   .list .count p{max-width:150px;}
+   .navBarList li span{font-size: 15px;}
+   .bangdan .fclist li span b{max-width:156px;}
+}
+
+@media screen and (max-height:416px){
+    
+}
+
+@media screen and (min-height:504px){
+    
+}
+
+@media screen and (min-height:603px){
+   
+}
+
+@media screen and (min-height:672px){
+    
+}

@@ -1,0 +1,364 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1, maximum-scale=1, user-scalable=no" /><meta content="email=no" name="format-detection" /><meta name="apple-touch-fullscreen" content="YES"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black">
+<style type="text/css">
+/*全局*/
+html{width:100%;height:100%;}
+body{height:100%;width:100%;padding:0;margin:0;position:relative; color:#434343;font:15px weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;background-color: #ebebeb;}
+ul,ul li,ol,ol li,dl,dl dd,h3,h4,p,a,span,div{ list-style:none; margin:0; padding:0; color:#434343;}
+a{text-decoration:none;}
+.pageTop{background-color: #fff;width:100%;height:334px;margin-bottom:6px;position:relative;border-bottom: 1px solid #dddddd;}
+.pageTop .banner{width:100%;height:226px;}
+.pageTop .banner img{width:100%;height:100%;}
+.headInfo{width: 100%;height:203px;padding:2px;position: absolute;bottom:0;left:50%;-webkit-transform:translateX(-50%);text-align: center;}
+.headImg{width: 134px;height: 134px;border: 3px solid #fff;border-radius: 2px;margin:0 auto;display:block;}
+.headInfo p{max-width: 200px;margin:0 auto;}
+.headName{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:center;font-size:20px;color:#595959;font-weight: bold;padding-top:6px;}
+.headArea{white-space: nowrap;overflow: hidden;text-overflow: ellipsis;text-align:center;color:#878787;padding-top:4px;}
+.headArea span:nth-child(1){margin-right:4px;}
+
+
+.pageBottom{background-color: #fff;width:100%;border-top: 1px solid #dddddd;}
+.pageBottom ul{width:100%;}
+.pageBottom ul li{float:left;width:50%;height:120px;background-color:#fff;border-right:2px solid #ebebeb;-webkit-box-sizing:border-box;box-sizing:border-box;margin-bottom:2px;padding-top:8%;}
+.pageBottom ul li img{display:block;width:40px;height:30px;margin:0 auto;}
+.pageBottom ul li p{display:block;margin-top:6px;width:100%;height:30px;text-align: center;color:#595959;font-size: 13px;}
+.pageBottom ul li p b{display:inline-block;height:30px;line-height: 30px;overflow:hidden;}
+.pageBottom #gold{max-width:56px;text-overflow: ellipsis;white-space:nowrap;}
+.pageBottom ul li:nth-child(1) .cz{padding:0 10px;border:1px solid #0d9cff;border-radius: 5px;
+
+}
+@media screen and (max-width:320px){
+	.pageTop{height:284px;}
+	.pageTop .banner{height:186px;}
+}
+@media screen and (min-width:360px){}
+@media screen and (min-width:375px){}
+@media screen and (min-width:414px){
+	.pageTop{height:374px;}
+	.pageTop .banner{height:256px;}
+	.pageBottom ul li{height:140px;padding-top:9%;}
+}
+</style>
+</head><body><script src="//a-h5.mtq.tvm.cn/yao/common/jc/xdTools-1.0.js"></script>
+<script>
+var search=getSearch()
+	,DO=document
+	,DB=DO.body
+	,winW=window.innerWidth
+	,winH=window.innerHeight
+	,PAGE={title:"摇一摇福利到",
+		token:"gsedkka20pg8"
+		,yyyappid:"gsedkka20pg8"
+		,channelId:"wxd06496bae6bb4a78"
+		,systoken:"uuETOJuZ"
+	}
+	,CONFIG={
+	shareInfo:{
+		title:"红包摇不停！",
+		ico:"http://qa.h5.mtq.tvm.cn/yao/sq_yyy/img/share_ico.png",
+		link:"",
+		desc:"正在玩红包摇不停，推荐你也来试试，现金红包任你领",
+		token:"46497107fa23",
+		resources:location.href,
+		strFun:function(wx){
+			wx.hideOptionMenu()
+			}
+		}
+	}
+	,HOST={
+AD:"//us-mb.mtq.tvm.cn",
+ADJS:"//tvmdata.oss-cn-hangzhou.aliyuncs.com",
+API:"//count.yaotv.tvm.cn",
+APICDN:"//q-cdn.mtq.tvm.cn",
+BALANCE:"//ttye.yaotv.tvm.cn",
+CARD:"//pmall.yaotv.tvm.cn",
+CJ:"//cj.mtq.tvm.cn",
+DOMAIN:"//pmall.yaotv.tvm.cn",
+DOMAIN2:"http://pmall.yaotv.tvm.cn",
+DSP:"//dsp.yaotv.tvm.cn",
+DSPJS:"//e-cdn.yaotv.tvm.cn",
+FOLDER:"//a-h5.mtq.tvm.cn/yao",
+GOLDCOIN:"//us-coin.yaotv.tvm.cn",
+HJGY:"//wsq.yaotv.tvm.cn",
+HUIYUAN:"//userapi.yaotv.tvm.cn/tvmyao/hz.html",
+JBDH:"http://q.cdn.mtq.tvm.cn/adsmall/mobile/views/",
+JIAGE:"//ad-cdn.yaotv.tvm.cn",
+MALL:"mall.yaotv.tvm.cn",
+MB:"//qc.yaotv.tvm.cn",
+ORDER:"http://yaomall.tvm.cn/html/?q=deal/46497107fa23/0/order",
+QQAPI:"//yaotv.qq.com/shake_tv/include/js/jsapi.js",
+QQHB:"//wximg.gtimg.com/shake_tv/include/js/jsapi_hongbao.js",
+QX:"//userapi.yaotv.tvm.cn",
+RESOURCE:"//a-h5.mtq.tvm.cn/yao/common/",
+RTS:"//rts-opa.yaotv.tvm.cn",
+SC:"//ucj.yaotv.tvm.cn",
+SJYZ:"//qsms.yaotv.tvm.cn",
+SOCKET:"//yao-socket.yaotv.tvm.cn",
+TJ:"//ana.mtq.tvm.cn",
+TX:"//tf.yaotv.tvm.cn",
+USERAPI:"//userapi.yaotv.tvm.cn",
+WSQ:"//wsq.yaotv.tvm.cn",
+WSQCDN:"//q-cdn.mtq.tvm.cn",
+WSQDZP:"//wsq.yaotv.tvm.cn",
+WSQTURN:"//wsq.yaotv.tvm.cn",
+WXAPI:"//res.wx.qq.com/open/js/jweixin-1.0.0.js",
+WXAPIS:"//apis.map.qq.com/ws/geocoder/v1/",
+YAO:"//yaotv.tvm.cn"
+}
+,userStr=localStorage.getItem("userInfo")
+mainVar={userInfo:userStr?toObject(userStr):{openid:search.openid,nickname:search.nickname,sig:search.sig,sigExpire:1476949177}};
+	var $=mainVar
+	,popBox,n=0
+	,user=mainVar.userInfo
+	;
+	init()
+	
+function init(){
+	var pageTHtml="",userRegion=""
+		,pageTop=createNode(DB,'div',{className:'pageTop'},'p2')
+		;
+		pageT();pageBottom();
+
+	function pageT(){
+		var html="",imgUrl,username,id=user.openid,userAddress;
+	 	if(id){
+			getUserInfo(id,function($data){
+				if($data.err===false){
+					var msg=$data.msg
+					if(msg.openid!=""){
+						imgUrl=msg.weixin_avatar_url;
+						username=msg.nickname;
+						pageTHtml='<div class="banner">'
+							+'<img src="'+HOST.FOLDER+'/outhtml/images/banner.jpg"/>'
+							+'</div>'
+							+'<div class="headInfo">'
+							+'<img src="'+imgUrl+'" class="headImg">'
+							+'<p class="headName">'+username+'</p>'
+							+'<p class="headArea"><span id="userAdd"></span></p>'
+							+'</div>';
+						pageTop.innerHTML=pageTHtml;
+						userAddress=document.querySelector('#userAdd')
+						if(user.wxAddress)userAddress.innerHTML="來自 "+user.wxAddress;
+					}else{
+						tishi("返回用户身份错误",{showTime:3000,fun:function(){
+							toSQ()
+							}})
+						}
+				}else{
+					tishi("获取用户身份失败",{showTime:3000,fun:function(){
+							toSQ()
+					}})
+				}
+			})		
+		}else{
+			toSQ()
+		}
+	}
+
+}
+CONFIG.shareInfo.strFun=function(wx){
+		wx.getLocation({
+		  success:function($data){
+			var user=mainVar.userInfo
+			,ln=$data.longitude
+			,la=$data.latitude
+			,list,pos;
+			if(!user.location)user.location={}
+			pos=user.location;
+			pos.gps=la+","+ln;
+			window.getGeo=function($data){
+				var ad_info,result,address,add,userAddress=document.querySelector('#userAdd')
+				if($data){
+					if(result=$data.result){
+						ad_info=result.ad_info;
+						list=ad_info.name;
+						list=list.replace(/\,/g,"-");
+						add=list.split("-");
+						address=result.address;	
+						pos.region=list;
+						pos.address=address;
+						pos.adcode=ad_info.adcode||0;
+						pos.cache=0;
+					    user.country=add[0];
+						user.province=add[1];
+						user.city=add[2];
+						user.organization=add[3];
+						user.wxAddress=add[3]?(add[2]+add[3]):add[2]
+						userAddress.innerHTML="來自 "+user.wxAddress
+						var now=+new Date,us=user.setTime||0;
+							if(now-us>36e6){
+								var a=setAjax("POST",HOST.RTS+"/userinfo/saveaddr?"+nocache())
+								a.data="openid="+user.openid+"&nickname="+user.nickname+"&head_img="+user.weixin_avatar_url+"&sex="+user.sex
+								+"&longitude="+ln+"&latitude="+la+"&provice="+add[1]+"&city="+add[2]+"&area="+add[3]+"&street="+address+"&adcode="+pos.adcode+"&systoken="+PAGE.systoken+"&wxSig="+user.sig
+								a.send();							
+								}
+						localStorage.setItem("userInfo",JSON.stringify(user))
+					}
+				}else
+				tishi("ERR_not position")
+			}
+			setJsonp(HOST.WXAPIS+"?location="+la+","+ln+"&coord_type=5&get_poi=0&output=jsonp&callback=getGeo&key=IPVBZ-BO4HG-MD3QU-I75W4-F7KUZ-PSBYI")
+		  },
+		  cancel:function (res) {
+		  }
+	    });
+		wx.getNetworkType({
+		  success:function(res){
+			mainVar.network=res.networkType;
+		  },
+		  fail: function (res) {
+			mainVar.network="fail"
+		  }
+  	    })		
+}
+wxShare(CONFIG.shareInfo)
+function pageBottom(){
+	var pageB=createNode(DB,'div',{className:'pageBottom'},'p3')
+		,pageBHtml
+		,ajax
+		,sw=190
+		,svg={width:sw,height:sw,origin:sw/2,r:78,bw:7}
+		,att='cx="'+svg.origin+'" cy="'+svg.origin+'" r="'+svg.r+'" fill="none" stroke-width="'+svg.bw+'"'
+		,zc=svg.r*Math.PI*2
+		;
+		pageBHtml='<ul>'
+			+'<li><img src="'+HOST.FOLDER+'/outhtml/images/1.png"><p><b>金幣</b><b id="gold" style="margin:0 10px;">0</b><b class="cz" onclick="goto(\'http://us-games.yaotv.tvm.cn/Home/Order/index\')">充值</b></p></li>'
+			+'<li onclick="goto(\'http://us-games.yaotv.tvm.cn/Home/Login/jump?ms=Xlz&cs=Index&as=index&h=mywin&k=my_tab&v=mywin\')"><img src="'+HOST.FOLDER+'/outhtml/images/2.png"><p><b>金幣中獎</b></p></li>'
+			+'<li onclick="goto(\'http://us-www.yaomall.tvm.cn/html/?q=deal/gsedkka20pg8/0/orders\')"><img src="'+HOST.FOLDER+'/outhtml/images/4.png"><p><b>商城訂單</b></p></li>'
+			+'<li onclick="goto(\'http://us-live.mtq.tvm.cn/fastcall/openauth/mbauth?wx_token=gsedkka20pg8&s_pageview=fdlist&redirect=http%3A%2F%2Fwximg.gtimg.com%2Fshake_tv%2Fshaketv_new%2Fzip%2F24gyg62nd0of9dz2e6r94m%2Fcoin.html\')"><img src="'+HOST.FOLDER+'/outhtml/images/3.png"><p><b>我的回答</b></p></li>'
+			;
+		pageB.innerHTML=pageBHtml;
+		var goldInfo=pageB.querySelector('#gold');
+		mygodnum(function(_){
+			var $h,$a,$d=_.data;
+			if(_.status=="success"){
+				if($d.integral==0)$h=0;else $h=$d.integral;
+			}else $h=0;
+			
+			goldInfo.textContent=$h;
+		},'',HOST.GOLDCOIN)
+
+		// getXY()
+		function getXY(){
+			var a=setAjax('GET',HOST.BALANCE+'/open/user/virtualcurrency?code='+user.sig+'&channelid='+PAGE.channelId+SU()+'&cache='+nocache())	
+			a.send();
+			a.callBack=function($data){
+				var _=toObject($data);
+					if(_.status=="success"){
+						var data=_.body,fullMoney=data.walletSize,theMoney=data.virtualCurrency,arr=locusCount(33,0,theMoney),maxV,time,full=theMoney>=fullMoney,sj=document.querySelector('.shengji');
+						mainVar.money=theMoney/100;
+						// if(full){
+						// 	sj.style.display="block";
+						// 	mFull.style.display="block";
+						// }
+						time=setInterval(function(){
+						if(arr.length){
+							var s=arr.shift()
+								theMoneyInfo.textContent=setMoney(s);
+								maxV=zc-zc*s/fullMoney;
+								if(maxV<0)maxV=0;
+								//circleEle.style.strokeDashoffset=maxV
+							}else{
+								clearInterval(time)
+								}
+						},20)
+						_thisMainVar.walletSize=fullMoney/100;
+					};
+			}
+		}
+
+
+}
+function SU(){
+	return '&yyyappId='+PAGE.yyyappid+'&openId='+user.openid+'&sign='+user.sig+'&sigExpire='+user.sigExpire
+	}
+function nocache(){
+	return "nocache="+Math.random()
+	}
+function locusCount(p,S,E){
+	var tem,s=S,e=E,_=[],i=-1;
+		if(p<1){
+		if(p<=0)return false
+		//判断p如果是大于1的则按等比均分，反之缓冲
+			for(;s!=e;){
+				tem=p*(e-s)
+				tem=(tem>0?Math.ceil(tem):Math.floor(tem)) 
+				s+=tem;
+				_[i+=1]=s;
+			}
+		}else{
+			tem=Math.ceil((e-s)/p);
+			if(e<s){
+					for(;s>e;s+=tem){_[i+=1]=s}
+				}else{
+					for(;s<e;s+=tem){_[i+=1]=s}
+				}
+		};
+		if(_[_.length-1]!=e)_.push(e)
+			return _
+}
+function goto(url){
+	location.href=url;
+}
+function getHeads($url){
+		if($url)if($url.indexOf("default")>-1){return $url}else{return $url.indexOf("tvm")>-1?$url:decodeURIComponent($url).replace("http://wx.qlogo.cn/mmopen/http://wx.qlogo.cn/mmopen/","http://wx.qlogo.cn/mmopen/")+"/96";}
+}
+function getUserInfo($id,$fun){
+	window.getUserData=$fun;
+	setJsonp(HOST.AD+'/ufo/puserinfo?wx_token='+PAGE.token+"&openid="+$id+"&cb=getUserData&"+nocache())
+}
+function getChannel(){
+	var cOut=user.cOut||0,now=+new Date,userAddress=document.querySelector('#userAdd');
+	if(now-cOut>72e5){
+		var d=setAjax("GET",HOST.RTS+"/userinfo/get?openid="+user.openid+"&systoken="+PAGE.systoken+"&wxSig="+user.sig+"&"+nocache())
+			d.callBack=function($data){
+				var data=toObject($data),channel,p,pos={};
+				data=data.data;
+				channel=data.channel_list;
+				if(channel){
+					for(var i in channel){
+						user.channel=channel[i];
+						break
+						}
+					user.cOut=+new Date
+					}
+				if(!user.location)	
+				if(p=data.address){
+					pos.region="中国-"+p.provice+"-"+p.city+"-"+p.area;
+					pos.address=p.street;
+					pos.latitude=p.latitude;
+					pos.longitude=p.longitude;
+					pos.gps=p.latitude+","+p.longitude;
+					user.location=pos;
+					userRegion=p.area?(p.city+p.area):p.provice+p.city
+					// localStorage.setItem("userInfo",JSON.stringify(user))
+					userAddress.innerHTML=userRegion
+				}
+				d=null
+			}
+			d.send()
+		}				
+}
+function mygodnum($,a,b){	//获取“累计金币、我的金币” $是回调方法；
+	var a1;
+	if(b)
+		a1=setAjax("get",b+"/point/integral/query?wxToken="+PAGE.yyyappid+"&openId="+mainVar.userInfo.openid+"&ca="+(+new Date));
+	else
+		a1=setAjax("get",HOST.SJYZ+"/point/integral/query?wxToken="+PAGE.yyyappid+"&openId="+mainVar.userInfo.openid+"&ca="+(+new Date));
+	a1.callBack=function($data){	
+		var data=toObject($data);
+		huoqugod(data);
+	};
+	a1.err=function(){};
+	a1.send();
+	function huoqugod(_){
+		if(typeof $=="function")$(_);else{
+			var _=_.data;
+			a&&a(_.integral);
+		}
+	}
+}
+function toSQ($url){localStorage.clear()
+	var url=$url||location.href;
+		location.replace(HOST.AD+"/oauth?wx_token="+PAGE.token+"&redirecturl="+encodeURIComponent(url))
+}
+</script></body></html>

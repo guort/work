@@ -1,0 +1,37 @@
+html,body{margin:0;padding:0;}
+body{font:14px weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;}
+ul,ul li,ol,ol li,dl,dl dd,p{ list-style:none;margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6,strong{margin:0;padding:0;font-style:normal;}
+body{width:100%;height:100%;background:#e1544a url(img/friShareBJ.jpg) no-repeat;background-size:100%;}
+
+.friConTop{text-align: center;margin-top:60%;}
+.headImg{width:85px;height:85px;border-radius:50%;border:2px solid rgba(204,204,204,0.3);}
+.topInfo{font-size: 18px;color:#dcbc83;margin-top:2%;}
+.topInfo b{display: block;font-weight:normal;width:130px;margin:0 auto;white-space: nowrap;text-overflow:ellipsis;overflow:hidden;}
+/*.topInfo span{display: block;margin-top:1%;}*/
+.bigLB{width:84%;margin-top:7%;}
+.loadBtn{display: block;width:92%;height:50px;margin:0 auto;/*position: absolute;bottom:10%;left:50%;-webkit-transform:translateX(-50%);*/}
+.phoneInput{width:82%;height:40px;border-radius:6px;border:none;background-color: #a92e25;padding-left:15px;}
+.phoneInput::-webkit-input-placeholder{color:#e1544a;}
+.getInput{height:40px;position:relative;margin-top:6%;}
+.getLB{display:block;width:70px;height:38px;background-color: #dcbc83;line-height:36px;border-radius:5px;position: absolute;right:7.6%;bottom:0;}
+.tSOne,.tSTwo,.tSThr{color:#fff;text-align: left;margin-left:11%;}
+.tSOne{padding:6% 0;}
+.tSTwo{padding:6% 0 3%;}
+.tSOne b,.tSTwo b{font-weight: normal;}
+@media screen and (max-width:320px){
+.friConTop{margin-top:58%;}
+.headImg{width:66px;height:66px;}
+.loadBtn{height:40px;}
+.getLB{right:7.2%;}
+}
+@media screen and (min-width:360px){
+.friConTop{margin-top:58%;}
+.headImg{width:73px;height:73px;}
+}
+@media screen and (min-width:375px){
+
+}
+@media screen and (min-width:414px){
+.getLB{right:8%;}
+}
